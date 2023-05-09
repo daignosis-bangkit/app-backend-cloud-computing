@@ -1,11 +1,23 @@
-const sql_host = "34.101.93.195";
-const sql_user = "root";
-const sql_database = "db_lukaku";
-const sql_password = "lukakusqlKu123";
+const mysql = require("mysql");
 
-module.exports = {
-    sql_host,
-    sql_user,
-    sql_database,
-    sql_password
-}
+const db = mysql.createPool({
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: "db_lukaku",
+  port: 3306,
+  multipleStatements: true,
+  connectionLimit: 1000,
+  connectTimeout: 60 * 60 * 1000,
+  acquireTimeout: 60 * 60 * 1000,
+  timeout: 60 * 60 * 1000,
+});
+
+db.getConnection((err) => {
+  if (err) {
+    return console.error(`error : ${err.message}`);
+  }
+  console.log(`Connected to MySQL Server`);
+});
+
+module.exports = { db };

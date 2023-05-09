@@ -1,14 +1,6 @@
 const express = require("express");
-const sqlconf = require("../helper/configSql");
-const mysql = require("mysql");
-var uuid = require("uuid");
-
-const connection = mysql.createConnection({
-  host: sqlconf.sql_host,
-  user: sqlconf.sql_user,
-  database: sqlconf.sql_database,
-  password: sqlconf.sql_password,
-});
+const uuid = require("uuid");
+const { db } = require("../helper/configSql");
 
 module.exports = {
   postarticle: (req, res) => {
@@ -23,7 +15,7 @@ module.exports = {
 
     const query =
       "INSERT INTO tbl_article (article_id, article_post, category, author, creation_date, update_date, photo_article) values (?,?,?,?,?,?,?)";
-    connection.query(
+    db.query(
       query,
       [
         article_id,
