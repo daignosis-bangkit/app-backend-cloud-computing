@@ -1,6 +1,3 @@
-const express = require("express");
-const Multer = require("multer");
-
 module.exports = {
   profile: (req, res) => {
     const ext = /\.(jpg|jpeg|png|JPG|PNG|JPEG)/;
