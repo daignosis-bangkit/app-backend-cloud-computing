@@ -1,3 +1,5 @@
+const CryptoJs = require("crypto-js");
+const uuid = require("uuid");
 const { db } = require("../helper/configSql");
 
 module.exports = {
