@@ -1,6 +1,49 @@
 const { db } = require("../helper/configSql");
 
 module.exports = {
+  register: (req, res) => {
+    let { username, email, password } = req.body;
+    const user_id = uuid.v4();
+    const registration_date = new Date();
+
+    password = CryptoJs.MD5(password).toString();
+    db.query(
+      "SELECT count(*) as total FROM tbl_user WHERE username = ? OR email = ?",
+      [username, email],
+      (err, result) => {
+        if (err)
+          return res.status(500).send({
+            message: "Internal server error",
+            error: err.message,
+          });
+
+        if (result[0].total !== 0)
+          return res.status(400).send({
+            message: "Username or email already exists",
+          });
+
+        db.query(
+          "INSERT INTO tbl_user (user_id, username, password, email, creation_date) VALUES (?, ?, ?, ?, ?)",
+          [user_id, username, password, email, registration_date],
+          (err, result) => {
+            if (err)
+              return res.status(500).send({
+                message: "Internal server error",
+                error: err.message,
+              });
+
+            return res.status(200).send({
+              message: "Registration succeed",
+              data: {
+                username,
+                email,
+              },
+            });
+          }
+        );
+      }
+    );
+  },
   profile: (req, res) => {
     const ext = /\.(jpg|jpeg|png|JPG|PNG|JPEG)/;
     let imageUrl = "";
