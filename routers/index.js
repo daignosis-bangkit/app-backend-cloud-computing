@@ -1,9 +1,11 @@
-const codeRouters = require("./codeRouters");
+const userRouters = require("./userRouters");
 const socketRouters = require("./socketRouters");
 const sessionRouters = require("./sessionRouters");
+const articleRouters = require("./articleRouters")
 
 module.exports = {
-  codeRouters,
+  userRouters,
   socketRouters,
   sessionRouters,
+  articleRouters,
 };

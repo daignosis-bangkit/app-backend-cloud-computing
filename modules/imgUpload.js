@@ -4,6 +4,7 @@ const fs = require("fs");
 const path = require("path");
 var dateformat = require("date-format");
 const pathKey = path.resolve("./serviceaccountkey.json");
+var uuid = require("uuid");
 
 // TODO: Sesuaikan konfigurasi Storage
 const gcs = new Storage({
@@ -19,12 +20,23 @@ function getPublicUrl(filename) {
   return "https://storage.googleapis.com/" + bucketName + "/" + filename;
 }
 
+let globalType = ""
+
+function typePost(type) {
+  return globalType = type
+}
+
 let ImgUpload = {};
+let gcsname = ""
 
-ImgUpload.uploadToGcs = (req, res, next) => {
+ImgUpload.uploadToGcs = (req, res, next,) => {
+  //console.log(req.url)
   if (!req.file) return next();
-
-  const gcsname = req.body.username;
+  if(req.url === "/profile") {
+     gcsname = req.body.username;
+  } else if(req.url === "/post") {
+      gcsname = "asset-"+uuid.v4();
+  }
   const file = bucket.file(gcsname);
 
   const stream = file.createWriteStream({

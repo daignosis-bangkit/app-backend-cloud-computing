@@ -1,3 +1,5 @@
+const { db } = require("../helper/configSql");
+
 module.exports = {
   profile: (req, res) => {
     const ext = /\.(jpg|jpeg|png|JPG|PNG|JPEG)/;
@@ -19,7 +21,7 @@ module.exports = {
       ) {
         res.status(500).send("error file");
       }
-      imageUrl = req.file.cloudStoragePublicUrl;
+      photo = req.file.cloudStoragePublicUrl;
     } else {
       res.status(500).send("empty file");
     }

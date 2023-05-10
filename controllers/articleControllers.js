@@ -1,4 +1,3 @@
-const express = require("express");
 const uuid = require("uuid");
 const { db } = require("../helper/configSql");
 
@@ -11,10 +10,21 @@ module.exports = {
     let author = req.body.author;
     let creation_date = req.body.creation_date;
     let update_date = req.body.update_date;
-    let photo_article = req.body.photo_article;
+    let photo_article = "";
 
     const query =
       "INSERT INTO tbl_article (article_id, article_post, category, author, creation_date, update_date, photo_article) values (?,?,?,?,?,?,?)";
+    if (req.file && req.file.cloudStoragePublicUrl) {
+      if (
+        !req.file.mimetype.includes("image/") &&
+        !req.file.originalname.match(ext)
+      ) {
+        res.status(500).send("error file");
+      }
+      photo_article = req.file.cloudStoragePublicUrl;
+    } else {
+      res.status(500).send("empty file");
+    }
     db.query(
       query,
       [
