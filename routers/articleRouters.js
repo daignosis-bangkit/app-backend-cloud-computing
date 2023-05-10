@@ -1,5 +1,5 @@
 const express = require("express");
-const { userControllers  } = require("../controllers");
+const { articleControllers } = require("../controllers");
 const routers = express.Router();
 const Multer = require("multer");
 const imgUpload = require("../modules/imgUpload");
@@ -10,12 +10,10 @@ const multer = Multer({
 });
 
 routers.post(
-  "/profile",
-  multer.single("attachment"),
+  "/post",
+  multer.single("photo_article"),
   imgUpload.uploadToGcs,
-  userControllers.profile
+  articleControllers.postarticle
 );
-
-routers.post("/register", userControllers.register);
 
 module.exports = routers;
