@@ -3,6 +3,7 @@ const express = require("express");
 const app = express();
 const server = http.createServer(app);
 const cors = require("cors");
+const multer = require("multer");
 const socketIo = require("socket.io");
 const dotenv = require("dotenv");
 
@@ -31,10 +32,9 @@ app.use(
 app.get("/", (req, res) => {
   res.status(200).send("hello word");
 });
-const { codeRouters, socketRouters, userRouters } = require("./routers");
+const { codeRouters, socketRouters } = require("./routers");
 
 app.use("/api", codeRouters);
-app.use("/user", userRouters);
 
 io.on("connection", (socket) => socketRouters(socket, io));
 

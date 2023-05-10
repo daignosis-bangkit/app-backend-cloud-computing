@@ -24,7 +24,7 @@ module.exports = {
           });
 
         db.query(
-          "INSERT INTO tbl_chat (chat_id, session_id, is_bot, message, date) VALUES (?, ?, ?, ?, ?)",
+          "INSERT INTO tbl_chat VALUES (?, ?, ?, ?, ?)",
           [chat_id, data.session_id, false, data.message, message_date],
           (err, result) => {
             if (err)
