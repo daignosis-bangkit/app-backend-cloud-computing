@@ -6,12 +6,10 @@ module.exports = {
     if (typeof data !== "object") return false;
     if (!data.username) return false;
 
-    socket.join(data.username);
-
     const session_id = uuid.v4();
     db.query(
-      `SELECT user_id FROM tbl_user 
-			WHERE username = ${db.escape(data.username)}`,
+      "SELECT user_id FROM tbl_user WHERE username = ?",
+      [data.username],
       (err, result) => {
         if (err)
           return io.emit("error", {
@@ -19,10 +17,8 @@ module.exports = {
           });
 
         db.query(
-          `INSERT INTO tbl_session VALUES (
-						${db.escape(session_id)}, 
-						${db.escape(result[0].user_id)}
-					)`,
+          "INSERT INTO tbl_session VALUES (?, ?)",
+          [session_id, result[0].user_id],
           (err, result) => {
             if (err)
               return io.emit("error", {
