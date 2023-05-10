@@ -16,4 +16,6 @@ routers.post(
   userControllers.profile
 );
 
+routers.post("/register", userControllers.register);
+
 module.exports = routers;
