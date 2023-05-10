@@ -33,7 +33,7 @@ ImgUpload.uploadToGcs = (req, res, next,) => {
   //console.log(req.url)
   if (!req.file) return next();
   if(req.url === "/profile") {
-     gcsname = req.body.username;
+     gcsname = req.body.user_id;
   } else if(req.url === "/post") {
       gcsname = "asset-"+uuid.v4();
   }

@@ -46,7 +46,7 @@ module.exports = {
       }
     );
   },
-  profile: (req, res) => {
+  updateProfile: (req, res) => {
     const ext = /\.(jpg|jpeg|png|JPG|PNG|JPEG)/;
     let imageUrl = "";
     let userid = req.body.user_id;
@@ -58,6 +58,7 @@ module.exports = {
     let birthday = req.body.birthday;
     let creation_date = req.body.creation_date;
 
+    const query = "UPDATE tbl_user SET username = ?, password = ?, full_name = ?, phone_number = ?, email = ?, birthday = ?, photo_profile = ? WHERE user_id = ?"
     //security filter for exploit upload file
     if (req.file && req.file.cloudStoragePublicUrl) {
       if (
@@ -70,6 +71,25 @@ module.exports = {
     } else {
       res.status(500).send("empty file");
     }
-    res.status(200).send("upload image success");
+    db.query(
+      query,
+      [
+        username,
+        password,
+        fullname,
+        phonenumber,
+        email,
+        birthday,
+        photo,
+        userid
+      ],
+      (err, rows, fields) => {
+        if (err) {
+          res.status(500).send({ message: err.sqlMessage });
+        } else {
+          res.send({ message: "Insert Successful" });
+        }
+      }
+    );
   },
 };

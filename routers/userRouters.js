@@ -9,11 +9,11 @@ const multer = Multer({
   fileSize: 5 * 1024 * 1024,
 });
 
-routers.post(
+routers.patch(
   "/profile",
-  multer.single("attachment"),
+  multer.single("photo_profile"),
   imgUpload.uploadToGcs,
-  userControllers.profile
+  userControllers.updateProfile
 );
 
 routers.post("/register", userControllers.register);
