@@ -18,4 +18,6 @@ routers.patch(
 
 routers.post("/register", userControllers.register);
 
+routers.post("/login", userControllers.login);
+
 module.exports = routers;

@@ -1,10 +1,14 @@
 const CryptoJs = require("crypto-js");
 const uuid = require("uuid");
+
+const { createToken } = require("../helper/createToken");
 const { db } = require("../helper/configSql");
 
 module.exports = {
   register: (req, res) => {
     let { username, email, password } = req.body;
+    if (!username && !email && !password) return false;
+
     const user_id = uuid.v4();
     const registration_date = new Date();
 
@@ -46,6 +50,41 @@ module.exports = {
       }
     );
   },
+  login: (req, res) => {
+    let { email, password } = req.body;
+    if (!email && !password) return false;
+
+    password = CryptoJs.MD5(password).toString();
+    db.query(
+      "SELECT * FROM tbl_user WHERE email = ? && password = ?",
+      [email, password],
+      (err, result) => {
+        if (err)
+          return res.status(500).send({
+            message: "Internal server error",
+            error: err.message,
+          });
+
+        if (result.length !== 1)
+          return res.status(200).send({
+            message: "Unauthorized",
+            error: "Wrong password or email is not registered",
+          });
+
+        let dataUser = JSON.parse(JSON.stringify(result[0]));
+        delete dataUser.password;
+        delete dataUser.creation_date;
+
+        const token = createToken(dataUser);
+
+        return res.status(200).send({
+          message: "Login success",
+          data: dataUser,
+          token,
+        });
+      }
+    );
+  },
   updateProfile: (req, res) => {
     const ext = /\.(jpg|jpeg|png|JPG|PNG|JPEG)/;
     let imageUrl = "";
@@ -58,7 +97,8 @@ module.exports = {
     let birthday = req.body.birthday;
     let creation_date = req.body.creation_date;
 
-    const query = "UPDATE tbl_user SET username = ?, password = ?, full_name = ?, phone_number = ?, email = ?, birthday = ?, photo_profile = ? WHERE user_id = ?"
+    const query =
+      "UPDATE tbl_user SET username = ?, password = ?, full_name = ?, phone_number = ?, email = ?, birthday = ?, photo_profile = ? WHERE user_id = ?";
     //security filter for exploit upload file
     if (req.file && req.file.cloudStoragePublicUrl) {
       if (
@@ -81,7 +121,7 @@ module.exports = {
         email,
         birthday,
         photo,
-        userid
+        userid,
       ],
       (err, rows, fields) => {
         if (err) {
