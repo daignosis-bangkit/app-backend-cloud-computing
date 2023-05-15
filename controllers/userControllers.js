@@ -8,10 +8,9 @@ module.exports = {
   register: (req, res) => {
     let { username, email, password } = req.body;
     if (!username && !email && !password) return false;
-
     const user_id = uuid.v4();
+    const address_id = uuid.v4();
     const registration_date = new Date();
-
     password = CryptoJs.MD5(password).toString();
     db.query(
       "SELECT count(*) as total FROM tbl_user WHERE username = ? OR email = ?",
@@ -27,10 +26,23 @@ module.exports = {
           return res.status(400).send({
             message: "Username or email already exists",
           });
-
+        //"INSERT INTO tbl_address (user_id, address_id, address, city, province, postal_code, country) VALUES (?, ?, ?, ?, ?,?,?)",
         db.query(
-          "INSERT INTO tbl_user (user_id, username, password, email, creation_date) VALUES (?, ?, ?, ?, ?)",
-          [user_id, username, password, email, registration_date],
+          "INSERT INTO tbl_user (user_id, username, password, email, creation_date) VALUES (?, ?, ?, ?, ?); INSERT INTO tbl_address (user_id, address_id, address, city, province, postal_code, country) VALUES (?, ?, ?, ?, ?,?,?)",
+          [
+            user_id,
+            username,
+            password,
+            email,
+            registration_date,
+            user_id,
+            address_id,
+            "",
+            "",
+            "",
+            0,
+            "",
+          ],
           (err, result) => {
             if (err)
               return res.status(500).send({
@@ -96,9 +108,13 @@ module.exports = {
     let email = req.body.email;
     let birthday = req.body.birthday;
     let creation_date = req.body.creation_date;
-
+    let address = req.body.address;
+    let city = req.body.city;
+    let province = req.body.province;
+    let postal_code = req.body.postal_code;
+    let country = req.body.country;
     const query =
-      "UPDATE tbl_user SET username = ?, password = ?, full_name = ?, phone_number = ?, email = ?, birthday = ?, photo_profile = ? WHERE user_id = ?";
+      "UPDATE tbl_user SET username = ?, password = ?, full_name = ?, phone_number = ?, email = ?, birthday = ?, photo_profile = ? WHERE user_id = ?; UPDATE tbl_address SET address=?, city=?, province=?, postal_code=?, country=? where user_id=?";
     //security filter for exploit upload file
     if (req.file && req.file.cloudStoragePublicUrl) {
       if (
@@ -122,12 +138,18 @@ module.exports = {
         birthday,
         photo,
         userid,
+        address,
+        city,
+        province,
+        postal_code,
+        country,
+        userid
       ],
       (err, rows, fields) => {
         if (err) {
           res.status(500).send({ message: err.sqlMessage });
         } else {
-          res.send({ message: "Insert Successful" });
+          res.send({ message: "Update Successful" });
         }
       }
     );

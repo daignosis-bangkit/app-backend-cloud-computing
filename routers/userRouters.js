@@ -1,5 +1,5 @@
 const express = require("express");
-const { userControllers  } = require("../controllers");
+const { userControllers } = require("../controllers");
 const routers = express.Router();
 const Multer = require("multer");
 const imgUpload = require("../modules/imgUpload");
@@ -16,7 +16,7 @@ routers.patch(
   userControllers.updateProfile
 );
 
-routers.post("/register", userControllers.register);
+routers.post("/register", multer.single(""), userControllers.register);
 
 routers.post("/login", userControllers.login);
 
