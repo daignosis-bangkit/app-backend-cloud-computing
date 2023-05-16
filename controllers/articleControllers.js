@@ -49,16 +49,16 @@ module.exports = {
   },
   getArticle: (req, res) => {
     let article_id = req.params.id;
-    console.log(article_id)
 
     db.query(
       "SELECT * from tbl_article where article_id=?",
       [article_id],
       (err, result) => {
+        data = result[0]
         if (err) {
           res.status(500).send({ message: err.sqlMessage });
         } else {
-          res.send(result);
+          res.send(data);
         }
       }
     );
