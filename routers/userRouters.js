@@ -20,4 +20,6 @@ routers.post("/register", multer.single(""), userControllers.register);
 
 routers.post("/login", userControllers.login);
 
+routers.get("/profile", multer.single(""), userControllers.getProfile);
+
 module.exports = routers;
