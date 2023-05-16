@@ -1,13 +1,24 @@
 const uuid = require("uuid");
+const tf = require("@tensorflow/tfjs");
 const { db } = require("../helper/configSql");
+
+let model;
+tf.loadLayersModel(process.env.MODEL)
+  .then((loadedModel) => {
+    model = loadedModel;
+    console.log("Model loaded successfully");
+  })
+  .catch((err) => {
+    console.log("Failed to load model:", err);
+  });
 
 module.exports = {
   send: (socket, io, data) => {
     if (typeof data !== "object") return false;
     if (!data.session_id && !data.message) return false;
 
-    const chat_id = uuid.v4();
-    const message_date = new Date();
+    let chat_id = uuid.v4();
+    let message_date = new Date();
 
     db.query(
       "SELECT count(*) as total FROM tbl_session WHERE session_id = ?",
@@ -32,10 +43,29 @@ module.exports = {
                 message: `Error to send message. Error: ${err.message}`,
               });
 
-            return io.emit("new_message", {
+            io.emit("new_message", {
               message: data.message,
               date: message_date,
             });
+
+            const inputData = data.message;
+            const inputTensor = tf.tensor(inputData);
+            const prediction = model.predict(inputTensor);
+            const jsonPrediction = prediction.arraySync();
+
+            chat_id = uuid.v4();
+            message_date = new Date();
+
+            db.query(
+              "INSERT INTO tbl_chat VALUES (?, ?, ?, ?, ?)",
+              [chat_id, data.session_id, true, jsonPrediction, message_date],
+              (err, result) => {
+                return io.emit("new_message", {
+                  message: jsonPrediction,
+                  date: message_date,
+                });
+              }
+            );
           }
         );
       }
