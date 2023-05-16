@@ -13,7 +13,8 @@ routers.post(
   "/post",
   multer.single("photo_article"),
   imgUpload.uploadToGcs,
-  articleControllers.postarticle
+  articleControllers.postArticle
 );
 
+routers.get("/:id", multer.single(""), articleControllers.getArticle);
 module.exports = routers;

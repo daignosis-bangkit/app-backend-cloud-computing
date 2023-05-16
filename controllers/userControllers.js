@@ -143,13 +143,29 @@ module.exports = {
         province,
         postal_code,
         country,
-        userid
+        userid,
       ],
       (err, rows, fields) => {
         if (err) {
           res.status(500).send({ message: err.sqlMessage });
         } else {
           res.send({ message: "Update Successful" });
+        }
+      }
+    );
+  },
+  getProfile: (req, res) => {
+    const user_id = req.body.user_id;
+
+    db.query(
+      "SELECT * from tbl_user JOIN tbl_address ON  tbl_user.user_id=tbl_address.user_id where tbl_user.user_id=?",
+      [user_id],
+      (err, result) => {
+        let dataUser = JSON.parse(JSON.stringify(result[0]));
+        if (err) {
+          res.status(500).send({ message: err.sqlMessage });
+        } else {
+          res.send(dataUser);
         }
       }
     );
