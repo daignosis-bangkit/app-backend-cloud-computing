@@ -26,7 +26,6 @@ module.exports = {
           return res.status(400).send({
             message: "Username or email already exists",
           });
-        //"INSERT INTO tbl_address (user_id, address_id, address, city, province, postal_code, country) VALUES (?, ?, ?, ?, ?,?,?)",
         db.query(
           "INSERT INTO tbl_user (user_id, username, password, email, creation_date) VALUES (?, ?, ?, ?, ?); INSERT INTO tbl_address (user_id, address_id, address, city, province, postal_code, country) VALUES (?, ?, ?, ?, ?,?,?)",
           [
@@ -107,7 +106,6 @@ module.exports = {
     let phonenumber = req.body.phone_number;
     let email = req.body.email;
     let birthday = req.body.birthday;
-    let creation_date = req.body.creation_date;
     let address = req.body.address;
     let city = req.body.city;
     let province = req.body.province;
