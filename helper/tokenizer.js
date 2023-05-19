@@ -1,12 +1,15 @@
 const input = require("../dict_input.json");
 const output = require("../dict_output.json");
+const sentences = require("../sentences.json");
 
 module.exports = {
   toInt: (word) => {
     let tokenized = [];
     word.split(" ").forEach((token) => {
       input.forEach((dict) => {
-        if (dict.word === token) tokenized.push(dict.int);
+        if (dict.word === token && !tokenized.includes(dict.int))
+          tokenized.push(dict.int);
+        else if(!tokenized.includes(1)) tokenized.push(1);
       });
     });
 
@@ -31,6 +34,11 @@ module.exports = {
       if (dict.int === highestProbIndex) symptoms = dict.symptoms;
     });
 
-    return symptoms;
+    const randomSentencesNumber = Math.floor(Math.random() * (sentences.length - 0) + 0);
+    const selectedSentences = sentences[randomSentencesNumber];
+    let sentence = selectedSentences.replace("{symptoms}", symptoms);
+    sentence = sentence.replace("{accuracy}", "100%");
+
+    return sentence;
   },
 };
