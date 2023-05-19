@@ -7,11 +7,15 @@ const { db } = require("../helper/configSql");
 module.exports = {
   register: (req, res) => {
     let { username, email, password } = req.body;
-    if (!username && !email && !password) return false;
+    if (!username && !email && !password)
+      return res.status(422).send({
+        message: "Unprocessable entity",
+        error: "Login data is required but was not provided.",
+      });
     const user_id = uuid.v4();
     const address_id = uuid.v4();
     const registration_date = new Date();
-    password = CryptoJs.MD5(password).toString();
+    password = CryptoJs.MD5(password + process.env.PASS_KEY).toString();
     db.query(
       "SELECT count(*) as total FROM tbl_user WHERE username = ? OR email = ?",
       [username, email],
@@ -26,7 +30,6 @@ module.exports = {
           return res.status(400).send({
             message: "Username or email already exists",
           });
-        //"INSERT INTO tbl_address (user_id, address_id, address, city, province, postal_code, country) VALUES (?, ?, ?, ?, ?,?,?)",
         db.query(
           "INSERT INTO tbl_user (user_id, username, password, email, creation_date) VALUES (?, ?, ?, ?, ?); INSERT INTO tbl_address (user_id, address_id, address, city, province, postal_code, country) VALUES (?, ?, ?, ?, ?,?,?)",
           [
@@ -64,9 +67,13 @@ module.exports = {
   },
   login: (req, res) => {
     let { email, password } = req.body;
-    if (!email && !password) return false;
+    if (!email && !password)
+      return res.status(422).send({
+        message: "Unprocessable entity",
+        error: "Login data is required but was not provided.",
+      });
 
-    password = CryptoJs.MD5(password).toString();
+    password = CryptoJs.MD5(password + process.env.PASS_KEY).toString();
     db.query(
       "SELECT * FROM tbl_user WHERE email = ? && password = ?",
       [email, password],
@@ -84,6 +91,41 @@ module.exports = {
           });
 
         let dataUser = JSON.parse(JSON.stringify(result[0]));
+        delete dataUser.user_id;
+        delete dataUser.password;
+        delete dataUser.creation_date;
+
+        const token = createToken(dataUser);
+
+        return res.status(200).send({
+          message: "Login success",
+          data: dataUser,
+          token,
+        });
+      }
+    );
+  },
+  keepLogin: (req, res) => {
+    let {username, email} = req.user;
+
+    db.query(
+      "SELECT * FROM tbl_user WHERE username = ? AND email = ?",
+      [username, email],
+      (err, result) => {
+        if (err)
+          return res.status(500).send({
+            message: "Internal server error",
+            error: err.message,
+          });
+
+        if (result.length !== 1)
+          return res.status(200).send({
+            message: "Unauthorized",
+            error: "Wrong password or email is not registered",
+          });
+
+        let dataUser = JSON.parse(JSON.stringify(result[0]));
+        delete dataUser.user_id;
         delete dataUser.password;
         delete dataUser.creation_date;
 
@@ -107,7 +149,6 @@ module.exports = {
     let phonenumber = req.body.phone_number;
     let email = req.body.email;
     let birthday = req.body.birthday;
-    let creation_date = req.body.creation_date;
     let address = req.body.address;
     let city = req.body.city;
     let province = req.body.province;

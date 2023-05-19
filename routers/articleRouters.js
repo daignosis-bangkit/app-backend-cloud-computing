@@ -3,6 +3,7 @@ const { articleControllers } = require("../controllers");
 const routers = express.Router();
 const Multer = require("multer");
 const imgUpload = require("../modules/imgUpload");
+const { auth } = require("../helper/authToken");
 
 const multer = Multer({
   storage: Multer.MemoryStorage,
@@ -11,8 +12,7 @@ const multer = Multer({
 
 routers.post(
   "/post",
-  multer.single("photo_article"),
-  imgUpload.uploadToGcs,
+  [multer.single("photo_article"), auth, imgUpload.uploadToGcs],
   articleControllers.postArticle
 );
 

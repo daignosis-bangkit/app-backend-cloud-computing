@@ -3,6 +3,7 @@ const { userControllers } = require("../controllers");
 const routers = express.Router();
 const Multer = require("multer");
 const imgUpload = require("../modules/imgUpload");
+const { auth } = require("../helper/authToken");
 
 const multer = Multer({
   storage: Multer.MemoryStorage,
@@ -11,15 +12,15 @@ const multer = Multer({
 
 routers.patch(
   "/profile",
-  multer.single("photo_profile"),
-  imgUpload.uploadToGcs,
+  [multer.single("photo_profile"), auth, imgUpload.uploadToGcs],
   userControllers.updateProfile
 );
 
 routers.post("/register", multer.single(""), userControllers.register);
 
 routers.post("/login", userControllers.login);
+routers.patch("/keep-login", auth, userControllers.keepLogin);
 
-routers.get("/profile", multer.single(""), userControllers.getProfile);
+routers.get("/profile", [multer.single(""), auth], userControllers.getProfile);
 
 module.exports = routers;

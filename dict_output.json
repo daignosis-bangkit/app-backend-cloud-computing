@@ -1,0 +1,98 @@
+[
+  {
+    "symptoms": "Psoriasis",
+    "int": 15
+  },
+  {
+    "symptoms": "Varicose Veins",
+    "int": 17
+  },
+  {
+    "symptoms": "Typhoid",
+    "int": 16
+  },
+  {
+    "symptoms": "Chicken pox",
+    "int": 4
+  },
+  {
+    "symptoms": "Impetigo",
+    "int": 10
+  },
+  {
+    "symptoms": "Dengue",
+    "int": 6
+  },
+  {
+    "symptoms": "Fungal infection",
+    "int": 8
+  },
+  {
+    "symptoms": "Common Cold",
+    "int": 5
+  },
+  {
+    "symptoms": "Pneumonia",
+    "int": 14
+  },
+  {
+    "symptoms": "Dimorphic Hemorrhoids",
+    "int": 7
+  },
+  {
+    "symptoms": "Arthritis",
+    "int": 1
+  },
+  {
+    "symptoms": "Acne",
+    "int": 0
+  },
+  {
+    "symptoms": "Bronchial Asthma",
+    "int": 2
+  },
+  {
+    "symptoms": "Hypertension",
+    "int": 9
+  },
+  {
+    "symptoms": "Migraine",
+    "int": 13
+  },
+  {
+    "symptoms": "Cervical spondylosis",
+    "int": 3
+  },
+  {
+    "symptoms": "Jaundice",
+    "int": 11
+  },
+  {
+    "symptoms": "Malaria",
+    "int": 12
+  },
+  {
+    "symptoms": "urinary tract infection",
+    "int": 23
+  },
+  {
+    "symptoms": "allergy",
+    "int": 18
+  },
+  {
+    "symptoms": "gastroesophageal reflux disease",
+    "int": 21
+  },
+  {
+    "symptoms": "drug reaction",
+    "int": 20
+  },
+  {
+    "symptoms": "peptic ulcer disease",
+    "int": 22
+  },
+  {
+    "symptoms": "diabetes",
+    "int": 19
+  }
+]

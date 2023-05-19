@@ -1,0 +1,10 @@
+[
+  "Based on the symptoms provided, our system predicts that you may have {symptoms} with an accuracy rate of approximately {accuracy}.",
+  "Our prediction indicates that you are likely to have {symptoms} based on the given symptoms, with an accuracy level of around {accuracy}.",
+  "Based on the data we have received, our machine estimates that you are suffering from {symptoms} with an accuracy rate of about {accuracy}.",
+  "Our prediction suggests the possibility of {symptoms} based on the symptoms you have reported, with a confidence level of approximately {accuracy}.",
+  "According to our analysis, there is a likelihood of you having a {symptoms} based on the symptoms you have described, with an accuracy rate of around {accuracy}.",
+  "According to our prediction, there is a high likelihood of {symptoms} based on the reported symptoms, with a confidence level of approximately {accuracy}.",
+  "Our system's prediction indicates that you are likely to be diagnosed with {symptoms} based on the given symptoms, with an accuracy level of around {accuracy}.",
+  "Based on the symptoms provided, our machine learning model predicts that you might have {symptoms}, with an accuracy rate of approximately {accuracy}."
+]
