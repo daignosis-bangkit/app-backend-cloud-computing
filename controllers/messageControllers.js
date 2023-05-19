@@ -1,6 +1,7 @@
 const uuid = require("uuid");
 const tf = require("@tensorflow/tfjs");
 const { db } = require("../helper/configSql");
+const tokenizer = require("../helper/tokenizer");
 
 let model;
 tf.loadLayersModel(process.env.MODEL)
@@ -48,10 +49,12 @@ module.exports = {
               date: message_date,
             });
 
-            const inputData = data.message;
-            const inputTensor = tf.tensor(inputData);
+            const inputData = [
+              tokenizer.toInt(data.message),
+            ];
+            const inputTensor = tf.tensor2d(inputData);
             const prediction = model.predict(inputTensor);
-            const jsonPrediction = prediction.arraySync();
+            const jsonPrediction = tokenizer.toWord(prediction.arraySync());
 
             chat_id = uuid.v4();
             message_date = new Date();
