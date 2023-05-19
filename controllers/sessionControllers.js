@@ -4,13 +4,10 @@ const { db } = require("../helper/configSql");
 
 module.exports = {
   new: (socket, io, data) => {
-    if (typeof data !== "object") return false;
-    if (!data.username) return false;
-
     const session_id = uuid.v4();
     db.query(
       "SELECT user_id FROM tbl_user WHERE username = ?",
-      [data.username],
+      [socket.user.username],
       (err, result) => {
         if (err)
           return io.emit("error", {

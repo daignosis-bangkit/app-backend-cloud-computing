@@ -6,6 +6,7 @@ const cors = require("cors");
 const socketIo = require("socket.io");
 const dotenv = require("dotenv");
 const bearerToken = require("express-bearer-token");
+const jwt = require("jsonwebtoken");
 
 const bodyParser = require("body-parser");
 const port = process.env.port || 3300;
@@ -33,17 +34,33 @@ app.use(
 app.get("/", (req, res) => {
   res.status(200).send("hello word");
 });
+
 const {
   userRouters,
   socketRouters,
   articleRouters,
   sessionRouters,
+  messageRouters
 } = require("./routers");
 
 app.use("/user", userRouters);
 app.use("/article", articleRouters);
 app.use("/sessions", sessionRouters);
+app.use("/messages", messageRouters);
 
-io.on("connection", (socket) => socketRouters(socket, io));
+io.use((socket, next) => {
+  if (socket.handshake.headers && socket.handshake.headers.authorization)
+    jwt.verify(
+      socket.handshake.headers.authorization.split("Bearer ")[1],
+      process.env.TOKEN_KEY,
+      (err, decoded) => {
+        if (err) return next(new Error("Authentication error"));
+
+        socket.user = decoded;
+        next();
+      }
+    );
+  else return next(new Error("Authentication error"));
+}).on("connection", (socket) => socketRouters(socket, io));
 
 server.listen(port, () => console.log(`this server running on port ${port}`));

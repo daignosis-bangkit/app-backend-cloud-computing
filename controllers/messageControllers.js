@@ -22,8 +22,8 @@ module.exports = {
     let message_date = new Date();
 
     db.query(
-      "SELECT count(*) as total FROM tbl_session WHERE session_id = ?",
-      [data.session_id],
+      "SELECT * from tbl_user User JOIN tbl_session Session ON User.user_id = Session.user_id WHERE Session.session_id = ? AND User.username = ?",
+      [data.session_id, socket.user.username],
       (err, result) => {
         if (err)
           return io.emit("error", {
@@ -69,6 +69,30 @@ module.exports = {
             );
           }
         );
+      }
+    );
+  },
+  get: (req, res) => {
+    let { session_id } = req.params;
+    if (!session_id)
+      return res.status(422).send({
+        message: "Unprocessable entity",
+        error: "Session data is required but was not provided.",
+      });
+
+    db.query(
+      "SELECT Chat.is_bot, Chat.message, Chat.date from tbl_user User JOIN tbl_session Session ON User.user_id = Session.user_id JOIN tbl_chat Chat ON Session.session_id = Chat.session_id WHERE Session.session_id = ? AND User.username = ?",
+      [session_id, req.user.username],
+      (err, result) => {
+        if (err)
+          return res.status(500).send({
+            message: "Internal server error",
+            error: err.message,
+          });
+
+        return res.status(200).send({
+          data: result,
+        });
       }
     );
   },
