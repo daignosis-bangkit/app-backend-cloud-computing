@@ -7,9 +7,14 @@ module.exports = {
     let tokenized = [];
     word.split(" ").forEach((token) => {
       input.forEach((dict) => {
-        if (dict.word === token && !tokenized.includes(dict.int))
+        if (
+          dict.word === token &&
+          token !== "<OOV>" &&
+          !tokenized.includes(dict.int) &&
+          dict.int <= 999
+        )
           tokenized.push(dict.int);
-        else if(!tokenized.includes(1)) tokenized.push(1);
+        else if (!tokenized.includes(1)) tokenized.push(1);
       });
     });
 
@@ -34,7 +39,9 @@ module.exports = {
       if (dict.int === highestProbIndex) symptoms = dict.symptoms;
     });
 
-    const randomSentencesNumber = Math.floor(Math.random() * (sentences.length - 0) + 0);
+    const randomSentencesNumber = Math.floor(
+      Math.random() * (sentences.length - 0) + 0
+    );
     const selectedSentences = sentences[randomSentencesNumber];
     let sentence = selectedSentences.replace("{symptoms}", symptoms);
     sentence = sentence.replace("{accuracy}", "100%");
