@@ -49,9 +49,7 @@ module.exports = {
               date: message_date,
             });
 
-            const inputData = [
-              tokenizer.toInt(data.message),
-            ];
+            const inputData = [tokenizer.toInt(data.message)];
             const inputTensor = tf.tensor2d(inputData);
             const prediction = model.predict(inputTensor);
             const jsonPrediction = tokenizer.toWord(prediction.arraySync());
