@@ -1,5 +1,5 @@
 const input_en = require("../dict_input_en.json");
-const input_id = require("../dict_input_en.json");
+const input_id = require("../dict_input_id.json");
 const output = require("../dict_output_en.json");
 const sentences = require("../sentences.json");
 
