@@ -1,9 +1,13 @@
-const input = require("../dict_input.json");
-const output = require("../dict_output.json");
+const input_en = require("../dict_input_en.json");
+const input_id = require("../dict_input_id.json");
+const output = require("../dict_output_en.json");
 const sentences = require("../sentences.json");
 
 module.exports = {
-  toInt: (word) => {
+  toInt: (word, language) => {
+    let input;
+    if (language === "english") input = input_en;
+    else if (language === "indonesian") input = input_id;
     let tokenized = [];
     word.split(" ").forEach((token) => {
       input.forEach((dict) => {
@@ -24,7 +28,7 @@ module.exports = {
 
     return tokenized;
   },
-  toWord: (arr) => {
+  toWord: (arr, language) => {
     const tokenized = arr[0].slice();
     const sorted = arr[0].sort(function (a, b) {
       return b - a;
@@ -40,10 +44,11 @@ module.exports = {
     });
 
     const randomSentencesNumber = Math.floor(
-      Math.random() * (sentences.length - 0) + 0
+      Math.random() * (sentences.english.length - 0) + 0
     );
-    const selectedSentences = sentences[randomSentencesNumber];
-    let sentence = selectedSentences.replace("{symptoms}", symptoms);
+    let sentence = language === "english" ? sentences.english : sentences.indonesian
+    const selectedSentences = sentence[randomSentencesNumber];
+    sentence = selectedSentences.replace("{symptoms}", symptoms);
     sentence = sentence.replace("{accuracy}", "100%");
 
     return sentence;
