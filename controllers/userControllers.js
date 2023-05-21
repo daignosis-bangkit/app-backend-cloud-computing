@@ -31,7 +31,22 @@ module.exports = {
             message: "Username or email already exists",
           });
         db.query(
-          "INSERT INTO tbl_user (user_id, username, password, email, creation_date) VALUES (?, ?, ?, ?, ?); INSERT INTO tbl_address (user_id, address_id, address, city, province, postal_code, country) VALUES (?, ?, ?, ?, ?,?,?)",
+          `INSERT INTO tbl_user (
+            user_id, 
+            username, 
+            password, 
+            email, 
+            creation_date) 
+          VALUES (?, ?, ?, ?, ?); 
+          INSERT INTO tbl_address (
+            user_id, 
+            address_id, 
+            address, 
+            city, 
+            province, 
+            postal_code, 
+            country) 
+          VALUES (?, ?, ?, ?, ?,?,?)`,
           [
             user_id,
             username,
@@ -106,7 +121,7 @@ module.exports = {
     );
   },
   keepLogin: (req, res) => {
-    let {username, email} = req.user;
+    let { username, email } = req.user;
 
     db.query(
       "SELECT * FROM tbl_user WHERE username = ? AND email = ?",
