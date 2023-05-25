@@ -186,3 +186,107 @@ json output
 }
 ```
 
+## message path
+path = get ```/message/:id```
+
+header input
+
+ | name      |  type     | data type               | description  | required                                                         |
+ |-----------|-----------|-------------------------|-----------------------------------------------------------------------|--
+ | bearer-token      |  text | string   | get token from login | yes
+
+params input
+ | name      |  type     | data type               | description  | required                                                         |
+ |-----------|-----------|-------------------------|-----------------------------------------------------------------------|--
+ | id      |  text | string   | session_id | yes
+
+json output
+```
+{
+    "data": [
+        {
+            "is_bot": 1,
+            "message": "Prediksi kami menunjukkan bahwa Anda cenderung memiliki diabetes berdasarkan gejala yang diberikan, dengan tingkat akurasi sekitar 100%.",
+            "date": "2023-05-21T11:28:34.000Z"
+        },
+}
+```
+
+## session path
+path = get ```/sessions/:id```
+
+header input
+
+ | name      |  type     | data type               | description  | required                                                         |
+ |-----------|-----------|-------------------------|-----------------------------------------------------------------------|--
+ | bearer-token      |  text | string   | get token from login | yes
+
+parameter input
+ | name      |  type     | data type               | description  | required                                                         |
+ |-----------|-----------|-------------------------|-----------------------------------------------------------------------|--
+ | id      |  text | string   | N/A | yes
+
+
+json output
+```
+{
+    "data": [
+        {
+            "session_id": "27126901-ceaf-4f86-974c-bab85f38baf4",
+            "message": "Based on the symptoms provided, our machine learning model predicts that you might have drug reaction, with an accuracy rate of approximately 100%.",
+            "is_bot": 1,
+            "latest_chat_date": "2023-05-25T14:41:44.000Z"
+        },
+    ]
+}
+```
+
+## Socket
+##### Connection
+Header:
+- ```authorization```: ```Bearer <login token>```
+
+##### Emit
+###### Create Session
+Event: ```create_session```
+
+###### Listen
+Event: ```created_session```
+
+Example Output:
+```
+{
+    "session_id": "b9c273a9-a549-4e73-8958-2fcf65d8e770"
+}
+```
+
+###### Emit
+Event: ```new_message```
+
+Input message/event: 
+```
+{
+    "message": "I have a persistent cough, accompanied by chest tightness and shortness of breath. It's difficult for me to take deep breaths or engage in physical activities",
+    "session_id": "27126901-ceaf-4f86-974c-bab85f38baf4"
+}
+```
+
+###### Listen
+Event: ```new_message```
+
+Output:
+```
+{
+    "message": "Based on the symptoms provided, our machine learning model predicts that you might have drug reaction, with an accuracy rate of approximately 100%.",
+    "date": "2023-05-25T14:41:44.466Z"
+}
+```
+
+Event: ```error```
+
+Output:
+```
+{
+    "message": `Error to send message. Error: <error message>`,
+}
+```
