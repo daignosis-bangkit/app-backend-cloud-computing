@@ -172,7 +172,7 @@ module.exports = {
     let postal_code = req.body.postal_code;
     let country = req.body.country;
     const query =
-      "UPDATE tbl_user SET username = ?, password = ?, full_name = ?, phone_number = ?, email = ?, birthday = ?, photo_profile = ? WHERE user_id = ?; UPDATE tbl_address SET address=?, city=?, province=?, postal_code=?, country=? where user_id=?";
+      "UPDATE tbl_user SET username = ?, password = ?, full_name = ?, phone_number = ?, email = ?, birthday = ?, photo_profile = ? WHERE username = ?; UPDATE tbl_address SET address=?, city=?, province=?, postal_code=?, country=? where user_id=?";
     //security filter for exploit upload file
     if (req.file && req.file.cloudStoragePublicUrl) {
       if (
@@ -195,7 +195,7 @@ module.exports = {
         email,
         birthday,
         photo,
-        userid,
+        username,
         address,
         city,
         province,
@@ -257,7 +257,7 @@ module.exports = {
               } else {
                 db.query(
                   "UPDATE tbl_user SET password = ? where username = ?",
-                  [password,username],
+                  [password, username],
                   (err, result) => {
                     if (err) {
                       res.status(500).send({ message: err.sqlMessage });
@@ -272,7 +272,7 @@ module.exports = {
               }
             });
           } else {
-            res.send({ messge: "Invlid account", success: false });
+            res.send({ messages: "Invalid account", success: false });
           }
         }
       }
