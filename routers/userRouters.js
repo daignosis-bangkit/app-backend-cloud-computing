@@ -22,5 +22,6 @@ routers.post("/login", userControllers.login);
 routers.patch("/keep-login", auth, userControllers.keepLogin);
 
 routers.get("/profile", [multer.single(""), auth], userControllers.getProfile);
+routers.post("/forgot-password", [multer.single("")], userControllers.forgotPassword)
 
 module.exports = routers;

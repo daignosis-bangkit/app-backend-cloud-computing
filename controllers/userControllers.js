@@ -1,5 +1,7 @@
 const CryptoJs = require("crypto-js");
 const uuid = require("uuid");
+const randomstring = require("randomstring");
+const transporter = require("../helper/nodemailer");
 
 const { createToken } = require("../helper/createToken");
 const { db } = require("../helper/configSql");
@@ -212,7 +214,6 @@ module.exports = {
   },
   getProfile: (req, res) => {
     const user_id = req.body.user_id;
-
     db.query(
       "SELECT * from tbl_user JOIN tbl_address ON  tbl_user.user_id=tbl_address.user_id where tbl_user.user_id=?",
       [user_id],
@@ -222,6 +223,57 @@ module.exports = {
           res.status(500).send({ message: err.sqlMessage });
         } else {
           res.send(dataUser);
+        }
+      }
+    );
+  },
+  forgotPassword: (req, res) => {
+    let { username } = req.body;
+    db.query(
+      "SELECT * FROM tbl_user where username = ?",
+      [username],
+      (err, result) => {
+        if (err) {
+          res.status(500).send({ user_valid: false });
+        } else {
+          if (result.length > 0) {
+            let dataUser = JSON.parse(JSON.stringify(result[0]));
+            let mailku = dataUser.email;
+            let genpassword = randomstring.generate(10);
+            let password = CryptoJs.MD5(
+              genpassword + process.env.PASS_KEY
+            ).toString();
+
+            let formatmail = {
+              from: "Admin daignosis.id@gmail.com",
+              to: mailku,
+              subject: `New Password`,
+              html: `Hello ${username} this your new password you can login now with this password ${genpassword}`,
+            };
+
+            transporter.sendMail(formatmail, (errMail, resMail) => {
+              if (errMail) {
+                res.status(500).send({ message: errMail, err: errMail });
+              } else {
+                db.query(
+                  "UPDATE tbl_user SET password = ? where username = ?",
+                  [password,username],
+                  (err, result) => {
+                    if (err) {
+                      res.status(500).send({ message: err.sqlMessage });
+                    } else {
+                      res.send({
+                        messages: `Check your new password on ${mailku}`,
+                        success: true,
+                      });
+                    }
+                  }
+                );
+              }
+            });
+          } else {
+            res.send({ messge: "Invlid account", success: false });
+          }
         }
       }
     );
