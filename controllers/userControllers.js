@@ -213,6 +213,7 @@ module.exports = {
     );
   },
   getProfile: (req, res) => {
+    
     const user_id = req.body.user_id;
     db.query(
       "SELECT * from tbl_user JOIN tbl_address ON  tbl_user.user_id=tbl_address.user_id where tbl_user.user_id=?",
