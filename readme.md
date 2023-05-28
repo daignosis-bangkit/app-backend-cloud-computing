@@ -91,7 +91,7 @@ json output
 ```
 
 ##### get profile
-path = get ```/user/get-profile```
+path = post ```/user/get-profile```
 
 header input
 
