@@ -1,6 +1,6 @@
 ## user path
 ##### register
-path = post ```/user/register```
+path = post ```/user/login```
 
 body input
 
@@ -22,7 +22,7 @@ json output
 
 
 ##### login
-path = post ```/user/login```
+path = post ```/user/register```
 
 body input
 
@@ -70,6 +70,23 @@ json output
         "photo_profile": null
     },
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Impvc2kiLCJmdWxsX25hbWUiOm51bGwsInBob25lX251bWJlciI6bnVsbCwiZW1haWwiOiJqb3NpQGdtYWlsLmNvbSIsImJpcnRoZGF5IjpudWxsLCJwaG90b19wcm9maWxlIjpudWxsLCJpYXQiOjE2ODUwMjI5NjksImV4cCI6MTY4NTA1ODk2OX0.OKNS2oRKPY2v7opiwUnogceP-NIWZYO0hfcpCIvgNbM"
+}
+```
+
+##### forgot-password
+path = patch ```/user/forgot-password```
+
+body input
+
+ | name      |  type     | data type               | description  | required                                                         |
+ |-----------|-----------|-------------------------|-----------------------------------------------------------------------|--
+ | username      |  text | string   |  | yes
+
+json output
+```
+{
+    "messages": "Check your new password on xxxx@gmail.com",
+    "success": true
 }
 ```
 
