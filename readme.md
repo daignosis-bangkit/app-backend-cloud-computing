@@ -1,6 +1,6 @@
 ## user path
 ##### register
-path = post ```/user/login```
+path = post ```/user/register```
 
 body input
 
@@ -22,7 +22,7 @@ json output
 
 
 ##### login
-path = post ```/user/register```
+path = post ```/user/login```
 
 body input
 
