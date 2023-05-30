@@ -73,8 +73,25 @@ json output
 }
 ```
 
+##### forgot-password
+path = patch ```/user/forgot-password```
+
+body input
+
+ | name      |  type     | data type               | description  | required                                                         |
+ |-----------|-----------|-------------------------|-----------------------------------------------------------------------|--
+ | username      |  text | string   |  | yes
+
+json output
+```
+{
+    "messages": "Check your new password on xxxx@gmail.com",
+    "success": true
+}
+```
+
 ##### get profile
-path = get ```/user/profile```
+path = post ```/user/get-profile```
 
 header input
 
@@ -187,7 +204,7 @@ json output
 ```
 
 ## message path
-path = get ```/message/:id```
+path = post ```/message/:id```
 
 header input
 
@@ -213,7 +230,7 @@ json output
 ```
 
 ## session path
-path = get ```/sessions/:id```
+path = post ```/sessions/:id```
 
 header input
 

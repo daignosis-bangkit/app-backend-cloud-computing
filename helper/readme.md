@@ -1,14 +1,3 @@
-# instance
-cloud sql => mode development
-instance id: lukaku-instance-cloudsql
-password: lukakusqlKu123
-
-# connection
-const sql_host = "34.101.93.195";
-const sql_user = "root";
-const sql_database = "db_lukaku";
-const sql_password = "lukakusqlKu123";
-
 # create table name tbl_article
 article_id(40) varchar not null uniq
 article_post text

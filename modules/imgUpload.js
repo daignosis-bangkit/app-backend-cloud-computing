@@ -37,6 +37,7 @@ ImgUpload.uploadToGcs = (req, res, next,) => {
   } else if(req.url === "/post") {
       gcsname = "asset-"+uuid.v4();
   }
+  console.log(gcsname)
   const file = bucket.file(gcsname);
 
   const stream = file.createWriteStream({
