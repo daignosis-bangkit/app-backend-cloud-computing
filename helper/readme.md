@@ -1,10 +1,3 @@
-# instance
-cloud sql => mode development
-instance id: lukaku-instance-cloudsql
-password: lukakusqlKu123
-
-
-
 # create table name tbl_article
 article_id(40) varchar not null uniq
 article_post text

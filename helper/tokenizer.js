@@ -1,7 +1,7 @@
-const input_en = require("../dict_input_en.json");
-const input_id = require("../dict_input_id.json");
-const output = require("../dict_output_en.json");
-const sentences = require("../sentences.json");
+const input_en = require("../static/dict_input_en.json");
+const input_id = require("../static/dict_input_id.json");
+const output = require("../static/dict_output_desc_en.json");
+const sentences = require("../static/sentences.json");
 
 module.exports = {
   toInt: (word, language) => {
@@ -14,23 +14,21 @@ module.exports = {
         if (
           dict.word === token &&
           token !== "<OOV>" &&
-          !tokenized.includes(dict.int) &&
-          dict.int <= 999
+          !tokenized.includes(dict.int)
         )
           tokenized.push(dict.int);
         else if (!tokenized.includes(1)) tokenized.push(1);
       });
     });
 
-    if (tokenized.length < 120) {
-      for (let i = tokenized.length - 1; i < 119; i++) tokenized.push(0);
-    }
+    if (tokenized.length < 120)
+      for (let i = tokenized.length; i < 120; i++) tokenized.push(0);
 
     return tokenized;
   },
   toWord: (arr, language) => {
     const tokenized = arr[0].slice();
-    const sorted = arr[0].sort(function (a, b) {
+    const sorted = arr[0].sort((a, b) => {
       return b - a;
     });
     let highestProbIndex;
@@ -46,10 +44,10 @@ module.exports = {
     const randomSentencesNumber = Math.floor(
       Math.random() * (sentences.english.length - 0) + 0
     );
-    let sentence = language === "english" ? sentences.english : sentences.indonesian
+    let sentence =
+      language === "english" ? sentences.english : sentences.indonesian;
     const selectedSentences = sentence[randomSentencesNumber];
     sentence = selectedSentences.replace("{symptoms}", symptoms);
-    sentence = sentence.replace("{accuracy}", "100%");
 
     return sentence;
   },

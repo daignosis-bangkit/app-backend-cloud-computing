@@ -204,7 +204,7 @@ json output
 ```
 
 ## message path
-path = get ```/message/:id```
+path = post ```/message/:id```
 
 header input
 
@@ -230,7 +230,7 @@ json output
 ```
 
 ## session path
-path = get ```/sessions/:id```
+path = post ```/sessions/:id```
 
 header input
 

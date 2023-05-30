@@ -40,7 +40,7 @@ const {
   socketRouters,
   articleRouters,
   sessionRouters,
-  messageRouters
+  messageRouters,
 } = require("./routers");
 
 app.use("/user", userRouters);
