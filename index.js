@@ -9,7 +9,6 @@ const bearerToken = require("express-bearer-token");
 const jwt = require("jsonwebtoken");
 
 const bodyParser = require("body-parser");
-const port = process.env.port || 3300;
 
 dotenv.config();
 
@@ -63,4 +62,5 @@ io.use((socket, next) => {
   else return next(new Error("Authentication error"));
 }).on("connection", (socket) => socketRouters(socket, io));
 
+const port = process.env.PORT || 8080;
 server.listen(port, () => console.log(`this server running on port ${port}`));

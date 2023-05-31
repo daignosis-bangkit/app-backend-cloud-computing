@@ -122,7 +122,7 @@ module.exports = {
           error: false,
           message: "Login success",
           data: {
-            dataUser,
+            ...dataUser,
             token,
           },
         });
@@ -159,7 +159,7 @@ module.exports = {
           error: false,
           message: "Login success",
           data: {
-            dataUser,
+            ...dataUser,
             token,
           },
         });
