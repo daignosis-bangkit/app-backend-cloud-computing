@@ -11,8 +11,9 @@ module.exports = {
     let { username, email, password } = req.body;
     if (!username && !email && !password)
       return res.status(422).send({
-        message: "Unprocessable entity",
-        error: "Login data is required but was not provided.",
+        error: true,
+        message:
+          "Unprocessable entity: Login data is required but was not provided.",
       });
     const user_id = uuid.v4();
     const address_id = uuid.v4();
@@ -24,12 +25,13 @@ module.exports = {
       (err, result) => {
         if (err)
           return res.status(500).send({
-            message: "Internal server error",
-            error: err.message,
+            error: true,
+            message: `Internal server error: ${err.message}`,
           });
 
         if (result[0].total !== 0)
           return res.status(400).send({
+            error: true,
             message: "Username or email already exists",
           });
         db.query(
@@ -66,11 +68,12 @@ module.exports = {
           (err, result) => {
             if (err)
               return res.status(500).send({
-                message: "Internal server error",
-                error: err.message,
+                error: true,
+                message: `Internal server error: ${err.message}`,
               });
 
             return res.status(200).send({
+              error: false,
               message: "Registration succeed",
               data: {
                 username,
@@ -86,8 +89,9 @@ module.exports = {
     let { email, password } = req.body;
     if (!email && !password)
       return res.status(422).send({
-        message: "Unprocessable entity",
-        error: "Login data is required but was not provided.",
+        error: true,
+        message:
+          "Unprocessable entity: Login data is required but was not provided.",
       });
 
     password = CryptoJs.MD5(password + process.env.PASS_KEY).toString();
@@ -97,14 +101,14 @@ module.exports = {
       (err, result) => {
         if (err)
           return res.status(500).send({
-            message: "Internal server error",
-            error: err.message,
+            error: true,
+            message: `Internal server error: ${err.message}`,
           });
 
         if (result.length !== 1)
-          return res.status(200).send({
-            message: "Unauthorized",
-            error: "Wrong password or email is not registered",
+          return res.status(401).send({
+            error: true,
+            message: `Unauthorized: Wrong password or email is not registered`,
           });
 
         let dataUser = JSON.parse(JSON.stringify(result[0]));
@@ -115,9 +119,12 @@ module.exports = {
         const token = createToken(dataUser);
 
         return res.status(200).send({
+          error: false,
           message: "Login success",
-          data: dataUser,
-          token,
+          data: {
+            dataUser,
+            token,
+          },
         });
       }
     );
@@ -131,14 +138,14 @@ module.exports = {
       (err, result) => {
         if (err)
           return res.status(500).send({
-            message: "Internal server error",
-            error: err.message,
+            error: true,
+            message: `Internal server error: ${err.message}`,
           });
 
         if (result.length !== 1)
-          return res.status(200).send({
-            message: "Unauthorized",
-            error: "Wrong password or email is not registered",
+          return res.status(401).send({
+            error: true,
+            message: "Unauthorized: Wrong password or email is not registered",
           });
 
         let dataUser = JSON.parse(JSON.stringify(result[0]));
@@ -149,9 +156,12 @@ module.exports = {
         const token = createToken(dataUser);
 
         return res.status(200).send({
+          error: false,
           message: "Login success",
-          data: dataUser,
-          token,
+          data: {
+            dataUser,
+            token,
+          },
         });
       }
     );
@@ -205,7 +215,7 @@ module.exports = {
       ],
       (err, rows, fields) => {
         if (err) {
-          res.status(500).send({ message: err.sqlMessage });
+          res.status(500).send({ error: true, message: err.sqlMessage });
         } else {
           res.send({ message: "Update Successful" });
         }
@@ -213,7 +223,6 @@ module.exports = {
     );
   },
   getProfile: (req, res) => {
-    
     const user_id = req.body.user_id;
     db.query(
       "SELECT * from tbl_user JOIN tbl_address ON  tbl_user.user_id=tbl_address.user_id where tbl_user.user_id=?",
