@@ -103,8 +103,8 @@ module.exports = {
     let { session_id } = req.params;
     if (!session_id)
       return res.status(422).send({
-        message: "Unprocessable entity",
-        error: "Session data is required but was not provided.",
+        error: true,
+        message: "Unprocessable entity: Session data is required but was not provided.",
       });
 
     db.query(
@@ -117,11 +117,12 @@ module.exports = {
       (err, result) => {
         if (err)
           return res.status(500).send({
-            message: "Internal server error",
-            error: err.message,
+            error: true,
+            message: `Internal server error: ${err.message}`,
           });
 
         return res.status(200).send({
+          error: false,
           data: result,
         });
       }

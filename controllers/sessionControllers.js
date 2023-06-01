@@ -52,11 +52,12 @@ module.exports = {
       (err, result) => {
         if (err)
           return res.status(500).send({
-            message: "Internal server error",
-            error: err.message,
+            error: true,
+            message: `Internal server error: ${err.message}`,
           });
 
         return res.status(200).send({
+          error: false,
           data: result,
         });
       }
