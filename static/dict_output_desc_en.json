@@ -1,98 +1,182 @@
 [
   {
-    "symptoms": "Psoriasis",
-    "int": 15
-  },
-  {
-    "symptoms": "Varicose Veins",
-    "int": 17
-  },
-  {
-    "symptoms": "Typhoid",
+    "symptoms": "Fungal infection",
     "int": 16
   },
   {
-    "symptoms": "Chicken pox",
+    "symptoms": "Allergy",
     "int": 4
   },
   {
-    "symptoms": "Impetigo",
-    "int": 10
+    "symptoms": "GERD",
+    "int": 17
   },
   {
-    "symptoms": "Dengue",
-    "int": 6
-  },
-  {
-    "symptoms": "Fungal infection",
-    "int": 8
-  },
-  {
-    "symptoms": "Common Cold",
-    "int": 5
-  },
-  {
-    "symptoms": "Pneumonia",
-    "int": 14
-  },
-  {
-    "symptoms": "Dimorphic Hemorrhoids",
-    "int": 7
-  },
-  {
-    "symptoms": "Arthritis",
-    "int": 1
-  },
-  {
-    "symptoms": "Acne",
-    "int": 0
-  },
-  {
-    "symptoms": "Bronchial Asthma",
-    "int": 2
-  },
-  {
-    "symptoms": "Hypertension",
+    "symptoms": "Chronic cholestasis",
     "int": 9
   },
   {
-    "symptoms": "Migraine",
-    "int": 13
+    "symptoms": "Drug Reaction",
+    "int": 15
   },
   {
-    "symptoms": "Cervical spondylosis",
-    "int": 3
+    "symptoms": "Peptic ulcer diseae",
+    "int": 35
   },
   {
-    "symptoms": "Jaundice",
-    "int": 11
+    "symptoms": "AIDS",
+    "int": 1
   },
   {
-    "symptoms": "Malaria",
+    "symptoms": "Diabetes",
     "int": 12
   },
   {
-    "symptoms": "urinary tract infection",
-    "int": 23
-  },
-  {
-    "symptoms": "allergy",
+    "symptoms": "Gastroenteritis",
     "int": 18
   },
   {
-    "symptoms": "gastroesophageal reflux disease",
-    "int": 21
+    "symptoms": "Bronchial Asthma",
+    "int": 6
   },
   {
-    "symptoms": "drug reaction",
+    "symptoms": "Hypertension",
+    "int": 25
+  },
+  {
+    "symptoms": "Migraine",
+    "int": 32
+  },
+  {
+    "symptoms": "Cervical spondylosis",
+    "int": 7
+  },
+  {
+    "symptoms": "Paralysis (brain hemorrhage)",
+    "int": 34
+  },
+  {
+    "symptoms": "Jaundice",
+    "int": 30
+  },
+  {
+    "symptoms": "Malaria",
+    "int": 31
+  },
+  {
+    "symptoms": "Chicken pox",
+    "int": 8
+  },
+  {
+    "symptoms": "Dengue",
+    "int": 11
+  },
+  {
+    "symptoms": "Typhoid",
+    "int": 39
+  },
+  {
+    "symptoms": "hepatitis A",
+    "int": 47
+  },
+  {
+    "symptoms": "Hepatitis B",
     "int": 20
   },
   {
-    "symptoms": "peptic ulcer disease",
+    "symptoms": "Hepatitis C",
+    "int": 21
+  },
+  {
+    "symptoms": "Hepatitis D",
     "int": 22
   },
   {
-    "symptoms": "diabetes",
+    "symptoms": "Hepatitis E",
+    "int": 23
+  },
+  {
+    "symptoms": "Alcoholic hepatitis",
+    "int": 3
+  },
+  {
+    "symptoms": "Tuberculosis",
+    "int": 38
+  },
+  {
+    "symptoms": "Common Cold",
+    "int": 10
+  },
+  {
+    "symptoms": "Pneumonia",
+    "int": 36
+  },
+  {
+    "symptoms": "Dimorphic hemmorhoids(piles)",
+    "int": 14
+  },
+  {
+    "symptoms": "Heart attack",
     "int": 19
+  },
+  {
+    "symptoms": "Varicose veins",
+    "int": 42
+  },
+  {
+    "symptoms": "Hypothyroidism",
+    "int": 28
+  },
+  {
+    "symptoms": "Hyperthyroidism",
+    "int": 26
+  },
+  {
+    "symptoms": "Hypoglycemia",
+    "int": 27
+  },
+  {
+    "symptoms": "Osteoarthristis",
+    "int": 33
+  },
+  {
+    "symptoms": "Arthritis",
+    "int": 5
+  },
+  {
+    "symptoms": "(vertigo) Paroymsal  Positional Vertigo",
+    "int": 0
+  },
+  {
+    "symptoms": "Acne",
+    "int": 2
+  },
+  {
+    "symptoms": "Urinary tract infection",
+    "int": 40
+  },
+  {
+    "symptoms": "Psoriasis",
+    "int": 37
+  },
+  {
+    "symptoms": "Impetigo",
+    "int": 29
+  },
+  {
+    "symptoms": "Varicose Veins",
+    "int": 41
+  },
+  {
+    "symptoms": "Dimorphic Hemorrhoids",
+    "int": 13
+  },
+  {
+    "symptoms": "Hypertension",
+    "int": 24
+  },
+  {
+    "symptoms": "gastroesophageal reflux disease",
+    "int": 46
   }
 ]
