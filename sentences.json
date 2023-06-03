@@ -1,0 +1,22 @@
+{
+  "english": [
+    "Based on the symptoms provided, our system predicts that you may have {symptoms} with an accuracy rate of approximately {accuracy}.",
+    "Our prediction indicates that you are likely to have {symptoms} based on the given symptoms, with an accuracy level of around {accuracy}.",
+    "Based on the data we have received, our machine estimates that you are suffering from {symptoms} with an accuracy rate of about {accuracy}.",
+    "Our prediction suggests the possibility of {symptoms} based on the symptoms you have reported, with a confidence level of approximately {accuracy}.",
+    "According to our analysis, there is a likelihood of you having a {symptoms} based on the symptoms you have described, with an accuracy rate of around {accuracy}.",
+    "According to our prediction, there is a high likelihood of {symptoms} based on the reported symptoms, with a confidence level of approximately {accuracy}.",
+    "Our system's prediction indicates that you are likely to be diagnosed with {symptoms} based on the given symptoms, with an accuracy level of around {accuracy}.",
+    "Based on the symptoms provided, our machine learning model predicts that you might have {symptoms}, with an accuracy rate of approximately {accuracy}."
+  ],
+  "indonesian": [
+    "Berdasarkan gejala yang diberikan, sistem kami memperkirakan bahwa Anda mungkin memiliki {symptoms} dengan tingkat akurasi kira-kira {accuracy}.",
+    "Prediksi kami menunjukkan bahwa Anda cenderung memiliki {symptoms} berdasarkan gejala yang diberikan, dengan tingkat akurasi sekitar {accuracy}.",
+    "Berdasarkan data yang kami terima, mesin kami memperkirakan bahwa Anda menderita {symptoms} dengan tingkat akurasi sekitar {accuracy}.",
+    "Prediksi kami menunjukkan kemungkinan {symptoms} berdasarkan gejala yang telah Anda laporkan, dengan tingkat kepercayaan kira-kira {accuracy}.",
+    "Menurut analisis kami, ada kemungkinan Anda memiliki {symptoms} berdasarkan gejala yang telah Anda jelaskan, dengan tingkat akurasi sekitar {accuracy}.",
+    "Menurut prediksi kami, ada kemungkinan besar {symptoms} berdasarkan gejala yang dilaporkan, dengan tingkat kepercayaan kira-kira {accuracy}.",
+    "Prediksi sistem kami menunjukkan bahwa Anda cenderung didiagnosis dengan {symptoms} berdasarkan gejala yang diberikan, dengan tingkat akurasi sekitar {accuracy}.",
+    "Berdasarkan gejala yang diberikan, model pembelajaran mesin kami memprediksi bahwa Anda mungkin memiliki {symptoms}, dengan tingkat akurasi kira-kira {accuracy}."
+  ]
+}
