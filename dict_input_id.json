@@ -1,0 +1,4238 @@
+[
+  {
+    "int": 1,
+    "word": "<OOV>"
+  },
+  {
+    "int": 2,
+    "word": "saya"
+  },
+  {
+    "int": 3,
+    "word": "dan"
+  },
+  {
+    "int": 4,
+    "word": "yang"
+  },
+  {
+    "int": 5,
+    "word": "sakit"
+  },
+  {
+    "int": 6,
+    "word": "mengalami"
+  },
+  {
+    "int": 7,
+    "word": "sangat"
+  },
+  {
+    "int": 8,
+    "word": "di"
+  },
+  {
+    "int": 9,
+    "word": "juga"
+  },
+  {
+    "int": 10,
+    "word": "tidak"
+  },
+  {
+    "int": 11,
+    "word": "merasa"
+  },
+  {
+    "int": 12,
+    "word": "kulit"
+  },
+  {
+    "int": 13,
+    "word": "ini"
+  },
+  {
+    "int": 14,
+    "word": "gatal"
+  },
+  {
+    "int": 15,
+    "word": "sering"
+  },
+  {
+    "int": 16,
+    "word": "banyak"
+  },
+  {
+    "int": 17,
+    "word": "dengan"
+  },
+  {
+    "int": 18,
+    "word": "demam"
+  },
+  {
+    "int": 19,
+    "word": "kepala"
+  },
+  {
+    "int": 20,
+    "word": "batuk"
+  },
+  {
+    "int": 21,
+    "word": "itu"
+  },
+  {
+    "int": 22,
+    "word": "telah"
+  },
+  {
+    "int": 23,
+    "word": "tinggi"
+  },
+  {
+    "int": 24,
+    "word": "untuk"
+  },
+  {
+    "int": 25,
+    "word": "leher"
+  },
+  {
+    "int": 26,
+    "word": "ruam"
+  },
+  {
+    "int": 27,
+    "word": "lelah"
+  },
+  {
+    "int": 28,
+    "word": "sulit"
+  },
+  {
+    "int": 29,
+    "word": "rasa"
+  },
+  {
+    "int": 30,
+    "word": "ada"
+  },
+  {
+    "int": 31,
+    "word": "memiliki"
+  },
+  {
+    "int": 32,
+    "word": "nyeri"
+  },
+  {
+    "int": 33,
+    "word": "otot"
+  },
+  {
+    "int": 34,
+    "word": "selain"
+  },
+  {
+    "int": 35,
+    "word": "parah"
+  },
+  {
+    "int": 36,
+    "word": "perut"
+  },
+  {
+    "int": 37,
+    "word": "kadang"
+  },
+  {
+    "int": 38,
+    "word": "makan"
+  },
+  {
+    "int": 39,
+    "word": "tubuh"
+  },
+  {
+    "int": 40,
+    "word": "kecil"
+  },
+  {
+    "int": 41,
+    "word": "benar"
+  },
+  {
+    "int": 42,
+    "word": "nyaman"
+  },
+  {
+    "int": 43,
+    "word": "mual"
+  },
+  {
+    "int": 44,
+    "word": "menjadi"
+  },
+  {
+    "int": 45,
+    "word": "hari"
+  },
+  {
+    "int": 46,
+    "word": "baru"
+  },
+  {
+    "int": 47,
+    "word": "beberapa"
+  },
+  {
+    "int": 48,
+    "word": "pusing"
+  },
+  {
+    "int": 49,
+    "word": "akhir"
+  },
+  {
+    "int": 50,
+    "word": "bisa"
+  },
+  {
+    "int": 51,
+    "word": "muntah"
+  },
+  {
+    "int": 52,
+    "word": "saat"
+  },
+  {
+    "int": 53,
+    "word": "aku"
+  },
+  {
+    "int": 54,
+    "word": "tenggorokan"
+  },
+  {
+    "int": 55,
+    "word": "merah"
+  },
+  {
+    "int": 56,
+    "word": "dada"
+  },
+  {
+    "int": 57,
+    "word": "kesulitan"
+  },
+  {
+    "int": 58,
+    "word": "menggigil"
+  },
+  {
+    "int": 59,
+    "word": "gangguan"
+  },
+  {
+    "int": 60,
+    "word": "lemah"
+  },
+  {
+    "int": 61,
+    "word": "bintik"
+  },
+  {
+    "int": 62,
+    "word": "karena"
+  },
+  {
+    "int": 63,
+    "word": "masalah"
+  },
+  {
+    "int": 64,
+    "word": "kaki"
+  },
+  {
+    "int": 65,
+    "word": "terus"
+  },
+  {
+    "int": 66,
+    "word": "badan"
+  },
+  {
+    "int": 67,
+    "word": "membuat"
+  },
+  {
+    "int": 68,
+    "word": "atau"
+  },
+  {
+    "int": 69,
+    "word": "terasa"
+  },
+  {
+    "int": 70,
+    "word": "berkeringat"
+  },
+  {
+    "int": 71,
+    "word": "punggung"
+  },
+  {
+    "int": 72,
+    "word": "menerus"
+  },
+  {
+    "int": 73,
+    "word": "kehilangan"
+  },
+  {
+    "int": 74,
+    "word": "air"
+  },
+  {
+    "int": 75,
+    "word": "penglihatan"
+  },
+  {
+    "int": 76,
+    "word": "bengkak"
+  },
+  {
+    "int": 77,
+    "word": "dari"
+  },
+  {
+    "int": 78,
+    "word": "berwarna"
+  },
+  {
+    "int": 79,
+    "word": "menderita"
+  },
+  {
+    "int": 80,
+    "word": "cukup"
+  },
+  {
+    "int": 81,
+    "word": "nafsu"
+  },
+  {
+    "int": 82,
+    "word": "suhu"
+  },
+  {
+    "int": 83,
+    "word": "berjalan"
+  },
+  {
+    "int": 84,
+    "word": "berat"
+  },
+  {
+    "int": 85,
+    "word": "asam"
+  },
+  {
+    "int": 86,
+    "word": "pencernaan"
+  },
+  {
+    "int": 87,
+    "word": "luka"
+  },
+  {
+    "int": 88,
+    "word": "menyakitkan"
+  },
+  {
+    "int": 89,
+    "word": "pada"
+  },
+  {
+    "int": 90,
+    "word": "kaku"
+  },
+  {
+    "int": 91,
+    "word": "buang"
+  },
+  {
+    "int": 92,
+    "word": "ketika"
+  },
+  {
+    "int": 93,
+    "word": "hidung"
+  },
+  {
+    "int": 94,
+    "word": "pergi"
+  },
+  {
+    "int": 95,
+    "word": "mulai"
+  },
+  {
+    "int": 96,
+    "word": "malam"
+  },
+  {
+    "int": 97,
+    "word": "kelelahan"
+  },
+  {
+    "int": 98,
+    "word": "terkadang"
+  },
+  {
+    "int": 99,
+    "word": "lengan"
+  },
+  {
+    "int": 100,
+    "word": "darah"
+  },
+  {
+    "int": 101,
+    "word": "bagi"
+  },
+  {
+    "int": 102,
+    "word": "seperti"
+  },
+  {
+    "int": 103,
+    "word": "bagian"
+  },
+  {
+    "int": 104,
+    "word": "waktu"
+  },
+  {
+    "int": 105,
+    "word": "jerawat"
+  },
+  {
+    "int": 106,
+    "word": "kering"
+  },
+  {
+    "int": 107,
+    "word": "lendir"
+  },
+  {
+    "int": 108,
+    "word": "seluruh"
+  },
+  {
+    "int": 109,
+    "word": "anus"
+  },
+  {
+    "int": 110,
+    "word": "kuning"
+  },
+  {
+    "int": 111,
+    "word": "berdarah"
+  },
+  {
+    "int": 112,
+    "word": "ketidaknyamanan"
+  },
+  {
+    "int": 113,
+    "word": "serta"
+  },
+  {
+    "int": 114,
+    "word": "lebih"
+  },
+  {
+    "int": 115,
+    "word": "dahak"
+  },
+  {
+    "int": 116,
+    "word": "sendi"
+  },
+  {
+    "int": 117,
+    "word": "bernapas"
+  },
+  {
+    "int": 118,
+    "word": "semakin"
+  },
+  {
+    "int": 119,
+    "word": "enak"
+  },
+  {
+    "int": 120,
+    "word": "disertai"
+  },
+  {
+    "int": 121,
+    "word": "kelemahan"
+  },
+  {
+    "int": 122,
+    "word": "mata"
+  },
+  {
+    "int": 123,
+    "word": "wajah"
+  },
+  {
+    "int": 124,
+    "word": "gejala"
+  },
+  {
+    "int": 125,
+    "word": "benjolan"
+  },
+  {
+    "int": 126,
+    "word": "kencing"
+  },
+  {
+    "int": 127,
+    "word": "mengganggu"
+  },
+  {
+    "int": 128,
+    "word": "keseimbangan"
+  },
+  {
+    "int": 129,
+    "word": "nanah"
+  },
+  {
+    "int": 130,
+    "word": "menyebabkan"
+  },
+  {
+    "int": 131,
+    "word": "selama"
+  },
+  {
+    "int": 132,
+    "word": "sepertinya"
+  },
+  {
+    "int": 133,
+    "word": "ke"
+  },
+  {
+    "int": 134,
+    "word": "merasakan"
+  },
+  {
+    "int": 135,
+    "word": "komedo"
+  },
+  {
+    "int": 136,
+    "word": "selalu"
+  },
+  {
+    "int": 137,
+    "word": "dadaku"
+  },
+  {
+    "int": 138,
+    "word": "apa"
+  },
+  {
+    "int": 139,
+    "word": "sepanjang"
+  },
+  {
+    "int": 140,
+    "word": "besar"
+  },
+  {
+    "int": 141,
+    "word": "setelah"
+  },
+  {
+    "int": 142,
+    "word": "sembelit"
+  },
+  {
+    "int": 143,
+    "word": "berbeda"
+  },
+  {
+    "int": 144,
+    "word": "seiring"
+  },
+  {
+    "int": 145,
+    "word": "biasa"
+  },
+  {
+    "int": 146,
+    "word": "sudah"
+  },
+  {
+    "int": 147,
+    "word": "hebat"
+  },
+  {
+    "int": 148,
+    "word": "tidur"
+  },
+  {
+    "int": 149,
+    "word": "jantungku"
+  },
+  {
+    "int": 150,
+    "word": "kencang"
+  },
+  {
+    "int": 151,
+    "word": "ringan"
+  },
+  {
+    "int": 152,
+    "word": "terlihat"
+  },
+  {
+    "int": 153,
+    "word": "secara"
+  },
+  {
+    "int": 154,
+    "word": "tanpa"
+  },
+  {
+    "int": 155,
+    "word": "turun"
+  },
+  {
+    "int": 156,
+    "word": "terutama"
+  },
+  {
+    "int": 157,
+    "word": "gelap"
+  },
+  {
+    "int": 158,
+    "word": "ingin"
+  },
+  {
+    "int": 159,
+    "word": "berlebihan"
+  },
+  {
+    "int": 160,
+    "word": "setiap"
+  },
+  {
+    "int": 161,
+    "word": "tiba"
+  },
+  {
+    "int": 162,
+    "word": "kabur"
+  },
+  {
+    "int": 163,
+    "word": "berisi"
+  },
+  {
+    "int": 164,
+    "word": "khawatir"
+  },
+  {
+    "int": 165,
+    "word": "tersumbat"
+  },
+  {
+    "int": 166,
+    "word": "fokus"
+  },
+  {
+    "int": 167,
+    "word": "makanan"
+  },
+  {
+    "int": 168,
+    "word": "kental"
+  },
+  {
+    "int": 169,
+    "word": "bergerak"
+  },
+  {
+    "int": 170,
+    "word": "kamar"
+  },
+  {
+    "int": 171,
+    "word": "sejak"
+  },
+  {
+    "int": 172,
+    "word": "lain"
+  },
+  {
+    "int": 173,
+    "word": "refluks"
+  },
+  {
+    "int": 174,
+    "word": "melihat"
+  },
+  {
+    "int": 175,
+    "word": "bersin"
+  },
+  {
+    "int": 176,
+    "word": "sembuh"
+  },
+  {
+    "int": 177,
+    "word": "aneh"
+  },
+  {
+    "int": 178,
+    "word": "kedinginan"
+  },
+  {
+    "int": 179,
+    "word": "kuat"
+  },
+  {
+    "int": 180,
+    "word": "lapar"
+  },
+  {
+    "int": 181,
+    "word": "mana"
+  },
+  {
+    "int": 182,
+    "word": "pernah"
+  },
+  {
+    "int": 183,
+    "word": "dalam"
+  },
+  {
+    "int": 184,
+    "word": "mulut"
+  },
+  {
+    "int": 185,
+    "word": "hal"
+  },
+  {
+    "int": 186,
+    "word": "terakhir"
+  },
+  {
+    "int": 187,
+    "word": "bau"
+  },
+  {
+    "int": 188,
+    "word": "marah"
+  },
+  {
+    "int": 189,
+    "word": "pernapasan"
+  },
+  {
+    "int": 190,
+    "word": "sekitar"
+  },
+  {
+    "int": 191,
+    "word": "kram"
+  },
+  {
+    "int": 192,
+    "word": "berlendir"
+  },
+  {
+    "int": 193,
+    "word": "mendapatkan"
+  },
+  {
+    "int": 194,
+    "word": "persendian"
+  },
+  {
+    "int": 195,
+    "word": "berkonsentrasi"
+  },
+  {
+    "int": 196,
+    "word": "lekas"
+  },
+  {
+    "int": 197,
+    "word": "mengeluarkan"
+  },
+  {
+    "int": 198,
+    "word": "urin"
+  },
+  {
+    "int": 199,
+    "word": "bahwa"
+  },
+  {
+    "int": 200,
+    "word": "kunjung"
+  },
+  {
+    "int": 201,
+    "word": "semua"
+  },
+  {
+    "int": 202,
+    "word": "melakukannya"
+  },
+  {
+    "int": 203,
+    "word": "hampir"
+  },
+  {
+    "int": 204,
+    "word": "hitam"
+  },
+  {
+    "int": 205,
+    "word": "buruk"
+  },
+  {
+    "int": 206,
+    "word": "pembuluh"
+  },
+  {
+    "int": 207,
+    "word": "bersendawa"
+  },
+  {
+    "int": 208,
+    "word": "warna"
+  },
+  {
+    "int": 209,
+    "word": "meradang"
+  },
+  {
+    "int": 210,
+    "word": "sekarang"
+  },
+  {
+    "int": 211,
+    "word": "berdegup"
+  },
+  {
+    "int": 212,
+    "word": "hanya"
+  },
+  {
+    "int": 213,
+    "word": "menelan"
+  },
+  {
+    "int": 214,
+    "word": "atas"
+  },
+  {
+    "int": 215,
+    "word": "biasanya"
+  },
+  {
+    "int": 216,
+    "word": "sekujur"
+  },
+  {
+    "int": 217,
+    "word": "sesak"
+  },
+  {
+    "int": 218,
+    "word": "menggunakan"
+  },
+  {
+    "int": 219,
+    "word": "napas"
+  },
+  {
+    "int": 220,
+    "word": "berbau"
+  },
+  {
+    "int": 221,
+    "word": "infeksi"
+  },
+  {
+    "int": 222,
+    "word": "sinus"
+  },
+  {
+    "int": 223,
+    "word": "bening"
+  },
+  {
+    "int": 224,
+    "word": "menyebar"
+  },
+  {
+    "int": 225,
+    "word": "depresi"
+  },
+  {
+    "int": 226,
+    "word": "belakang"
+  },
+  {
+    "int": 227,
+    "word": "dekat"
+  },
+  {
+    "int": 228,
+    "word": "diare"
+  },
+  {
+    "int": 229,
+    "word": "bercak"
+  },
+  {
+    "int": 230,
+    "word": "berjuang"
+  },
+  {
+    "int": 231,
+    "word": "kecoklatan"
+  },
+  {
+    "int": 232,
+    "word": "urine"
+  },
+  {
+    "int": 233,
+    "word": "oleh"
+  },
+  {
+    "int": 234,
+    "word": "sensitif"
+  },
+  {
+    "int": 235,
+    "word": "cairan"
+  },
+  {
+    "int": 236,
+    "word": "adalah"
+  },
+  {
+    "int": 237,
+    "word": "berhenti"
+  },
+  {
+    "int": 238,
+    "word": "berair"
+  },
+  {
+    "int": 239,
+    "word": "kekakuan"
+  },
+  {
+    "int": 240,
+    "word": "pun"
+  },
+  {
+    "int": 241,
+    "word": "gemetar"
+  },
+  {
+    "int": 242,
+    "word": "kembung"
+  },
+  {
+    "int": 243,
+    "word": "termasuk"
+  },
+  {
+    "int": 244,
+    "word": "melakukan"
+  },
+  {
+    "int": 245,
+    "word": "apapun"
+  },
+  {
+    "int": 246,
+    "word": "penurunan"
+  },
+  {
+    "int": 247,
+    "word": "mulas"
+  },
+  {
+    "int": 248,
+    "word": "agak"
+  },
+  {
+    "int": 249,
+    "word": "tetapi"
+  },
+  {
+    "int": 250,
+    "word": "berdebar"
+  },
+  {
+    "int": 251,
+    "word": "tekanan"
+  },
+  {
+    "int": 252,
+    "word": "daerah"
+  },
+  {
+    "int": 253,
+    "word": "mencium"
+  },
+  {
+    "int": 254,
+    "word": "tinja"
+  },
+  {
+    "int": 255,
+    "word": "cepat"
+  },
+  {
+    "int": 256,
+    "word": "berubah"
+  },
+  {
+    "int": 257,
+    "word": "area"
+  },
+  {
+    "int": 258,
+    "word": "meningkat"
+  },
+  {
+    "int": 259,
+    "word": "warnanya"
+  },
+  {
+    "int": 260,
+    "word": "kelenjar"
+  },
+  {
+    "int": 261,
+    "word": "getah"
+  },
+  {
+    "int": 262,
+    "word": "kali"
+  },
+  {
+    "int": 263,
+    "word": "harus"
+  },
+  {
+    "int": 264,
+    "word": "perubahan"
+  },
+  {
+    "int": 265,
+    "word": "jantung"
+  },
+  {
+    "int": 266,
+    "word": "alami"
+  },
+  {
+    "int": 267,
+    "word": "terbakar"
+  },
+  {
+    "int": 268,
+    "word": "kotoran"
+  },
+  {
+    "int": 269,
+    "word": "betis"
+  },
+  {
+    "int": 270,
+    "word": "luar"
+  },
+  {
+    "int": 271,
+    "word": "anggota"
+  },
+  {
+    "int": 272,
+    "word": "membengkak"
+  },
+  {
+    "int": 273,
+    "word": "berdahak"
+  },
+  {
+    "int": 274,
+    "word": "iritasi"
+  },
+  {
+    "int": 275,
+    "word": "tampaknya"
+  },
+  {
+    "int": 276,
+    "word": "mereka"
+  },
+  {
+    "int": 277,
+    "word": "gelisah"
+  },
+  {
+    "int": 278,
+    "word": "kuku"
+  },
+  {
+    "int": 279,
+    "word": "penuh"
+  },
+  {
+    "int": 280,
+    "word": "keringat"
+  },
+  {
+    "int": 281,
+    "word": "kesehatan"
+  },
+  {
+    "int": 282,
+    "word": "rasanya"
+  },
+  {
+    "int": 283,
+    "word": "tangan"
+  },
+  {
+    "int": 284,
+    "word": "keluar"
+  },
+  {
+    "int": 285,
+    "word": "bersamaan"
+  },
+  {
+    "int": 286,
+    "word": "sehari"
+  },
+  {
+    "int": 287,
+    "word": "memar"
+  },
+  {
+    "int": 288,
+    "word": "mengelupas"
+  },
+  {
+    "int": 289,
+    "word": "rendah"
+  },
+  {
+    "int": 290,
+    "word": "mandi"
+  },
+  {
+    "int": 291,
+    "word": "baik"
+  },
+  {
+    "int": 292,
+    "word": "tugas"
+  },
+  {
+    "int": 293,
+    "word": "menyerupai"
+  },
+  {
+    "int": 294,
+    "word": "tenggorokanku"
+  },
+  {
+    "int": 295,
+    "word": "bahkan"
+  },
+  {
+    "int": 296,
+    "word": "menghilangkan"
+  },
+  {
+    "int": 297,
+    "word": "bangun"
+  },
+  {
+    "int": 298,
+    "word": "keinginan"
+  },
+  {
+    "int": 299,
+    "word": "tentang"
+  },
+  {
+    "int": 300,
+    "word": "sedang"
+  },
+  {
+    "int": 301,
+    "word": "teratur"
+  },
+  {
+    "int": 302,
+    "word": "kesemutan"
+  },
+  {
+    "int": 303,
+    "word": "muncul"
+  },
+  {
+    "int": 304,
+    "word": "bibir"
+  },
+  {
+    "int": 305,
+    "word": "bingung"
+  },
+  {
+    "int": 306,
+    "word": "perhatikan"
+  },
+  {
+    "int": 307,
+    "word": "pembengkakan"
+  },
+  {
+    "int": 308,
+    "word": "lama"
+  },
+  {
+    "int": 309,
+    "word": "terdistorsi"
+  },
+  {
+    "int": 310,
+    "word": "saja"
+  },
+  {
+    "int": 311,
+    "word": "pagi"
+  },
+  {
+    "int": 312,
+    "word": "mati"
+  },
+  {
+    "int": 313,
+    "word": "energi"
+  },
+  {
+    "int": 314,
+    "word": "memperhatikan"
+  },
+  {
+    "int": 315,
+    "word": "siku"
+  },
+  {
+    "int": 316,
+    "word": "penyok"
+  },
+  {
+    "int": 317,
+    "word": "tegang"
+  },
+  {
+    "int": 318,
+    "word": "terkelupas"
+  },
+  {
+    "int": 319,
+    "word": "memburuk"
+  },
+  {
+    "int": 320,
+    "word": "sedikit"
+  },
+  {
+    "int": 321,
+    "word": "sensasi"
+  },
+  {
+    "int": 322,
+    "word": "bola"
+  },
+  {
+    "int": 323,
+    "word": "menjaga"
+  },
+  {
+    "int": 324,
+    "word": "naik"
+  },
+  {
+    "int": 325,
+    "word": "tersangkut"
+  },
+  {
+    "int": 326,
+    "word": "tetap"
+  },
+  {
+    "int": 327,
+    "word": "signifikan"
+  },
+  {
+    "int": 328,
+    "word": "semuanya"
+  },
+  {
+    "int": 329,
+    "word": "lutut"
+  },
+  {
+    "int": 330,
+    "word": "dorongan"
+  },
+  {
+    "int": 331,
+    "word": "aktivitas"
+  },
+  {
+    "int": 332,
+    "word": "mulutku"
+  },
+  {
+    "int": 333,
+    "word": "berlari"
+  },
+  {
+    "int": 334,
+    "word": "tahu"
+  },
+  {
+    "int": 335,
+    "word": "kepalaku"
+  },
+  {
+    "int": 336,
+    "word": "kemampuan"
+  },
+  {
+    "int": 337,
+    "word": "menonjol"
+  },
+  {
+    "int": 338,
+    "word": "keasaman"
+  },
+  {
+    "int": 339,
+    "word": "menyenangkan"
+  },
+  {
+    "int": 340,
+    "word": "sehingga"
+  },
+  {
+    "int": 341,
+    "word": "mudah"
+  },
+  {
+    "int": 342,
+    "word": "goyah"
+  },
+  {
+    "int": 343,
+    "word": "mengamati"
+  },
+  {
+    "int": 344,
+    "word": "mencoba"
+  },
+  {
+    "int": 345,
+    "word": "yakin"
+  },
+  {
+    "int": 346,
+    "word": "berbaring"
+  },
+  {
+    "int": 347,
+    "word": "ekstrim"
+  },
+  {
+    "int": 348,
+    "word": "tambalan"
+  },
+  {
+    "int": 349,
+    "word": "menjengkelkan"
+  },
+  {
+    "int": 350,
+    "word": "berkembang"
+  },
+  {
+    "int": 351,
+    "word": "karat"
+  },
+  {
+    "int": 352,
+    "word": "berdiri"
+  },
+  {
+    "int": 353,
+    "word": "kemerahan"
+  },
+  {
+    "int": 354,
+    "word": "menghadapi"
+  },
+  {
+    "int": 355,
+    "word": "mataku"
+  },
+  {
+    "int": 356,
+    "word": "busuk"
+  },
+  {
+    "int": 357,
+    "word": "terjadi"
+  },
+  {
+    "int": 358,
+    "word": "visual"
+  },
+  {
+    "int": 359,
+    "word": "tertentu"
+  },
+  {
+    "int": 360,
+    "word": "seminggu"
+  },
+  {
+    "int": 361,
+    "word": "lambat"
+  },
+  {
+    "int": 362,
+    "word": "disentuh"
+  },
+  {
+    "int": 363,
+    "word": "usus"
+  },
+  {
+    "int": 364,
+    "word": "pengelupasan"
+  },
+  {
+    "int": 365,
+    "word": "penciuman"
+  },
+  {
+    "int": 366,
+    "word": "jam"
+  },
+  {
+    "int": 367,
+    "word": "bawah"
+  },
+  {
+    "int": 368,
+    "word": "panas"
+  },
+  {
+    "int": 369,
+    "word": "terganggu"
+  },
+  {
+    "int": 370,
+    "word": "tampak"
+  },
+  {
+    "int": 371,
+    "word": "apalagi"
+  },
+  {
+    "int": 372,
+    "word": "teriritasi"
+  },
+  {
+    "int": 373,
+    "word": "diri"
+  },
+  {
+    "int": 374,
+    "word": "bergumul"
+  },
+  {
+    "int": 375,
+    "word": "umumnya"
+  },
+  {
+    "int": 376,
+    "word": "dipenuhi"
+  },
+  {
+    "int": 377,
+    "word": "kronis"
+  },
+  {
+    "int": 378,
+    "word": "rambut"
+  },
+  {
+    "int": 379,
+    "word": "bergelombang"
+  },
+  {
+    "int": 380,
+    "word": "migrain"
+  },
+  {
+    "int": 381,
+    "word": "menantang"
+  },
+  {
+    "int": 382,
+    "word": "tertekan"
+  },
+  {
+    "int": 383,
+    "word": "intens"
+  },
+  {
+    "int": 384,
+    "word": "pipi"
+  },
+  {
+    "int": 385,
+    "word": "dokter"
+  },
+  {
+    "int": 386,
+    "word": "kurang"
+  },
+  {
+    "int": 387,
+    "word": "akibat"
+  },
+  {
+    "int": 388,
+    "word": "memuntahkan"
+  },
+  {
+    "int": 389,
+    "word": "kekurangan"
+  },
+  {
+    "int": 390,
+    "word": "mengembangkan"
+  },
+  {
+    "int": 391,
+    "word": "sengsara"
+  },
+  {
+    "int": 392,
+    "word": "seringkali"
+  },
+  {
+    "int": 393,
+    "word": "berdetak"
+  },
+  {
+    "int": 394,
+    "word": "bersisik"
+  },
+  {
+    "int": 395,
+    "word": "henti"
+  },
+  {
+    "int": 396,
+    "word": "sisik"
+  },
+  {
+    "int": 397,
+    "word": "indera"
+  },
+  {
+    "int": 398,
+    "word": "akibatnya"
+  },
+  {
+    "int": 399,
+    "word": "begitu"
+  },
+  {
+    "int": 400,
+    "word": "membesar"
+  },
+  {
+    "int": 401,
+    "word": "berhari"
+  },
+  {
+    "int": 402,
+    "word": "berkabut"
+  },
+  {
+    "int": 403,
+    "word": "berpikir"
+  },
+  {
+    "int": 404,
+    "word": "menyiksa"
+  },
+  {
+    "int": 405,
+    "word": "pantat"
+  },
+  {
+    "int": 406,
+    "word": "vertigo"
+  },
+  {
+    "int": 407,
+    "word": "lesu"
+  },
+  {
+    "int": 408,
+    "word": "berlarian"
+  },
+  {
+    "int": 409,
+    "word": "belakangan"
+  },
+  {
+    "int": 410,
+    "word": "tersebut"
+  },
+  {
+    "int": 411,
+    "word": "sesuatu"
+  },
+  {
+    "int": 412,
+    "word": "stabil"
+  },
+  {
+    "int": 413,
+    "word": "berjerawat"
+  },
+  {
+    "int": 414,
+    "word": "melankolis"
+  },
+  {
+    "int": 415,
+    "word": "hilang"
+  },
+  {
+    "int": 416,
+    "word": "garukan"
+  },
+  {
+    "int": 417,
+    "word": "obat"
+  },
+  {
+    "int": 418,
+    "word": "menyimpang"
+  },
+  {
+    "int": 419,
+    "word": "lesi"
+  },
+  {
+    "int": 420,
+    "word": "rentan"
+  },
+  {
+    "int": 421,
+    "word": "terhadap"
+  },
+  {
+    "int": 422,
+    "word": "seimbang"
+  },
+  {
+    "int": 423,
+    "word": "tubuhku"
+  },
+  {
+    "int": 424,
+    "word": "jika"
+  },
+  {
+    "int": 425,
+    "word": "keras"
+  },
+  {
+    "int": 426,
+    "word": "terkendali"
+  },
+  {
+    "int": 427,
+    "word": "rona"
+  },
+  {
+    "int": 428,
+    "word": "penyebabnya"
+  },
+  {
+    "int": 429,
+    "word": "gerakan"
+  },
+  {
+    "int": 430,
+    "word": "perasa"
+  },
+  {
+    "int": 431,
+    "word": "mengkhawatirkan"
+  },
+  {
+    "int": 432,
+    "word": "kehidupan"
+  },
+  {
+    "int": 433,
+    "word": "datang"
+  },
+  {
+    "int": 434,
+    "word": "menemukan"
+  },
+  {
+    "int": 435,
+    "word": "dingin"
+  },
+  {
+    "int": 436,
+    "word": "berkerut"
+  },
+  {
+    "int": 437,
+    "word": "bekerja"
+  },
+  {
+    "int": 438,
+    "word": "celah"
+  },
+  {
+    "int": 439,
+    "word": "dalamnya"
+  },
+  {
+    "int": 440,
+    "word": "ketidaksabaran"
+  },
+  {
+    "int": 441,
+    "word": "sedap"
+  },
+  {
+    "int": 442,
+    "word": "perasaan"
+  },
+  {
+    "int": 443,
+    "word": "umum"
+  },
+  {
+    "int": 444,
+    "word": "ketidakstabilan"
+  },
+  {
+    "int": 445,
+    "word": "lambung"
+  },
+  {
+    "int": 446,
+    "word": "berbagai"
+  },
+  {
+    "int": 447,
+    "word": "siang"
+  },
+  {
+    "int": 448,
+    "word": "liur"
+  },
+  {
+    "int": 449,
+    "word": "menurunkan"
+  },
+  {
+    "int": 450,
+    "word": "telapak"
+  },
+  {
+    "int": 451,
+    "word": "menyentuhnya"
+  },
+  {
+    "int": 452,
+    "word": "berurusan"
+  },
+  {
+    "int": 453,
+    "word": "mengatur"
+  },
+  {
+    "int": 454,
+    "word": "kemih"
+  },
+  {
+    "int": 455,
+    "word": "tak"
+  },
+  {
+    "int": 456,
+    "word": "deras"
+  },
+  {
+    "int": 457,
+    "word": "tapi"
+  },
+  {
+    "int": 458,
+    "word": "membaik"
+  },
+  {
+    "int": 459,
+    "word": "nodul"
+  },
+  {
+    "int": 460,
+    "word": "rahang"
+  },
+  {
+    "int": 461,
+    "word": "normal"
+  },
+  {
+    "int": 462,
+    "word": "debu"
+  },
+  {
+    "int": 463,
+    "word": "terdiri"
+  },
+  {
+    "int": 464,
+    "word": "sabar"
+  },
+  {
+    "int": 465,
+    "word": "sama"
+  },
+  {
+    "int": 466,
+    "word": "menembus"
+  },
+  {
+    "int": 467,
+    "word": "atap"
+  },
+  {
+    "int": 468,
+    "word": "mengatasi"
+  },
+  {
+    "int": 469,
+    "word": "retakan"
+  },
+  {
+    "int": 470,
+    "word": "sisa"
+  },
+  {
+    "int": 471,
+    "word": "pahit"
+  },
+  {
+    "int": 472,
+    "word": "bekas"
+  },
+  {
+    "int": 473,
+    "word": "keruh"
+  },
+  {
+    "int": 474,
+    "word": "bernafas"
+  },
+  {
+    "int": 475,
+    "word": "tempat"
+  },
+  {
+    "int": 476,
+    "word": "demamku"
+  },
+  {
+    "int": 477,
+    "word": "pedas"
+  },
+  {
+    "int": 478,
+    "word": "rasakan"
+  },
+  {
+    "int": 479,
+    "word": "distorsi"
+  },
+  {
+    "int": 480,
+    "word": "pekerjaan"
+  },
+  {
+    "int": 481,
+    "word": "pilek"
+  },
+  {
+    "int": 482,
+    "word": "percaya"
+  },
+  {
+    "int": 483,
+    "word": "sendawa"
+  },
+  {
+    "int": 484,
+    "word": "seks"
+  },
+  {
+    "int": 485,
+    "word": "otak"
+  },
+  {
+    "int": 486,
+    "word": "melelahkan"
+  },
+  {
+    "int": 487,
+    "word": "menggaruk"
+  },
+  {
+    "int": 488,
+    "word": "mungkin"
+  },
+  {
+    "int": 489,
+    "word": "sekalipun"
+  },
+  {
+    "int": 490,
+    "word": "serangan"
+  },
+  {
+    "int": 491,
+    "word": "berkala"
+  },
+  {
+    "int": 492,
+    "word": "mempengaruhi"
+  },
+  {
+    "int": 493,
+    "word": "berlebih"
+  },
+  {
+    "int": 494,
+    "word": "kecemasan"
+  },
+  {
+    "int": 495,
+    "word": "melawan"
+  },
+  {
+    "int": 496,
+    "word": "simpul"
+  },
+  {
+    "int": 497,
+    "word": "mengerikan"
+  },
+  {
+    "int": 498,
+    "word": "diikuti"
+  },
+  {
+    "int": 499,
+    "word": "punya"
+  },
+  {
+    "int": 500,
+    "word": "berserabut"
+  },
+  {
+    "int": 501,
+    "word": "ruamnya"
+  },
+  {
+    "int": 502,
+    "word": "baunya"
+  },
+  {
+    "int": 503,
+    "word": "maag"
+  },
+  {
+    "int": 504,
+    "word": "ditutupi"
+  },
+  {
+    "int": 505,
+    "word": "kondisi"
+  },
+  {
+    "int": 506,
+    "word": "debar"
+  },
+  {
+    "int": 507,
+    "word": "kelaparan"
+  },
+  {
+    "int": 508,
+    "word": "menjalar"
+  },
+  {
+    "int": 509,
+    "word": "melalui"
+  },
+  {
+    "int": 510,
+    "word": "sebelumnya"
+  },
+  {
+    "int": 511,
+    "word": "jelaskan"
+  },
+  {
+    "int": 512,
+    "word": "jari"
+  },
+  {
+    "int": 513,
+    "word": "sakitnya"
+  },
+  {
+    "int": 514,
+    "word": "kelebihan"
+  },
+  {
+    "int": 515,
+    "word": "hadir"
+  },
+  {
+    "int": 516,
+    "word": "lemas"
+  },
+  {
+    "int": 517,
+    "word": "aftertaste"
+  },
+  {
+    "int": 518,
+    "word": "fisik"
+  },
+  {
+    "int": 519,
+    "word": "berpacu"
+  },
+  {
+    "int": 520,
+    "word": "sendiri"
+  },
+  {
+    "int": 521,
+    "word": "gas"
+  },
+  {
+    "int": 522,
+    "word": "menyakiti"
+  },
+  {
+    "int": 523,
+    "word": "tolong"
+  },
+  {
+    "int": 524,
+    "word": "tua"
+  },
+  {
+    "int": 525,
+    "word": "lapisan"
+  },
+  {
+    "int": 526,
+    "word": "keperakan"
+  },
+  {
+    "int": 527,
+    "word": "meninggalkan"
+  },
+  {
+    "int": 528,
+    "word": "berlemak"
+  },
+  {
+    "int": 529,
+    "word": "darinya"
+  },
+  {
+    "int": 530,
+    "word": "terhidrasi"
+  },
+  {
+    "int": 531,
+    "word": "menurun"
+  },
+  {
+    "int": 532,
+    "word": "tajam"
+  },
+  {
+    "int": 533,
+    "word": "minum"
+  },
+  {
+    "int": 534,
+    "word": "antasida"
+  },
+  {
+    "int": 535,
+    "word": "lagi"
+  },
+  {
+    "int": 536,
+    "word": "dapat"
+  },
+  {
+    "int": 537,
+    "word": "besi"
+  },
+  {
+    "int": 538,
+    "word": "anemia"
+  },
+  {
+    "int": 539,
+    "word": "melepuh"
+  },
+  {
+    "int": 540,
+    "word": "atasnya"
+  },
+  {
+    "int": 541,
+    "word": "terlalu"
+  },
+  {
+    "int": 542,
+    "word": "disebabkan"
+  },
+  {
+    "int": 543,
+    "word": "garuk"
+  },
+  {
+    "int": 544,
+    "word": "sedih"
+  },
+  {
+    "int": 545,
+    "word": "mengi"
+  },
+  {
+    "int": 546,
+    "word": "tekstur"
+  },
+  {
+    "int": 547,
+    "word": "pandangan"
+  },
+  {
+    "int": 548,
+    "word": "bermasalah"
+  },
+  {
+    "int": 549,
+    "word": "kabut"
+  },
+  {
+    "int": 550,
+    "word": "jernih"
+  },
+  {
+    "int": 551,
+    "word": "jalan"
+  },
+  {
+    "int": 552,
+    "word": "membantu"
+  },
+  {
+    "int": 553,
+    "word": "jamur"
+  },
+  {
+    "int": 554,
+    "word": "berolahraga"
+  },
+  {
+    "int": 555,
+    "word": "feses"
+  },
+  {
+    "int": 556,
+    "word": "salah"
+  },
+  {
+    "int": 557,
+    "word": "emosi"
+  },
+  {
+    "int": 558,
+    "word": "sederhana"
+  },
+  {
+    "int": 559,
+    "word": "rutin"
+  },
+  {
+    "int": 560,
+    "word": "peradangan"
+  },
+  {
+    "int": 561,
+    "word": "akan"
+  },
+  {
+    "int": 562,
+    "word": "belum"
+  },
+  {
+    "int": 563,
+    "word": "tenaga"
+  },
+  {
+    "int": 564,
+    "word": "lukanya"
+  },
+  {
+    "int": 565,
+    "word": "membuka"
+  },
+  {
+    "int": 566,
+    "word": "pikir"
+  },
+  {
+    "int": 567,
+    "word": "terkena"
+  },
+  {
+    "int": 568,
+    "word": "hati"
+  },
+  {
+    "int": 569,
+    "word": "jauh"
+  },
+  {
+    "int": 570,
+    "word": "keseluruhan"
+  },
+  {
+    "int": 571,
+    "word": "kecenderungan"
+  },
+  {
+    "int": 572,
+    "word": "terengah"
+  },
+  {
+    "int": 573,
+    "word": "engah"
+  },
+  {
+    "int": 574,
+    "word": "menguning"
+  },
+  {
+    "int": 575,
+    "word": "menahan"
+  },
+  {
+    "int": 576,
+    "word": "urat"
+  },
+  {
+    "int": 577,
+    "word": "jutaan"
+  },
+  {
+    "int": 578,
+    "word": "mil"
+  },
+  {
+    "int": 579,
+    "word": "per"
+  },
+  {
+    "int": 580,
+    "word": "perak"
+  },
+  {
+    "int": 581,
+    "word": "mengidam"
+  },
+  {
+    "int": 582,
+    "word": "awalnya"
+  },
+  {
+    "int": 583,
+    "word": "berdenyut"
+  },
+  {
+    "int": 584,
+    "word": "penyembuhan"
+  },
+  {
+    "int": 585,
+    "word": "segalanya"
+  },
+  {
+    "int": 586,
+    "word": "cemas"
+  },
+  {
+    "int": 587,
+    "word": "meledak"
+  },
+  {
+    "int": 588,
+    "word": "sekali"
+  },
+  {
+    "int": 589,
+    "word": "mirip"
+  },
+  {
+    "int": 590,
+    "word": "menyengat"
+  },
+  {
+    "int": 591,
+    "word": "bermandikan"
+  },
+  {
+    "int": 592,
+    "word": "ayah"
+  },
+  {
+    "int": 593,
+    "word": "gemuk"
+  },
+  {
+    "int": 594,
+    "word": "sesekali"
+  },
+  {
+    "int": 595,
+    "word": "membungkuk"
+  },
+  {
+    "int": 596,
+    "word": "mengalir"
+  },
+  {
+    "int": 597,
+    "word": "menutupi"
+  },
+  {
+    "int": 598,
+    "word": "membuatnya"
+  },
+  {
+    "int": 599,
+    "word": "mengontrol"
+  },
+  {
+    "int": 600,
+    "word": "sengaja"
+  },
+  {
+    "int": 601,
+    "word": "suka"
+  },
+  {
+    "int": 602,
+    "word": "peningkatan"
+  },
+  {
+    "int": 603,
+    "word": "suara"
+  },
+  {
+    "int": 604,
+    "word": "serak"
+  },
+  {
+    "int": 605,
+    "word": "zat"
+  },
+  {
+    "int": 606,
+    "word": "kenyang"
+  },
+  {
+    "int": 607,
+    "word": "berada"
+  },
+  {
+    "int": 608,
+    "word": "tumbuh"
+  },
+  {
+    "int": 609,
+    "word": "alasan"
+  },
+  {
+    "int": 610,
+    "word": "balik"
+  },
+  {
+    "int": 611,
+    "word": "nafas"
+  },
+  {
+    "int": 612,
+    "word": "pecah"
+  },
+  {
+    "int": 613,
+    "word": "perhatian"
+  },
+  {
+    "int": 614,
+    "word": "detak"
+  },
+  {
+    "int": 615,
+    "word": "kesedihan"
+  },
+  {
+    "int": 616,
+    "word": "mengantuk"
+  },
+  {
+    "int": 617,
+    "word": "namun"
+  },
+  {
+    "int": 618,
+    "word": "kelembapan"
+  },
+  {
+    "int": 619,
+    "word": "asma"
+  },
+  {
+    "int": 620,
+    "word": "tetes"
+  },
+  {
+    "int": 621,
+    "word": "perih"
+  },
+  {
+    "int": 622,
+    "word": "wajahku"
+  },
+  {
+    "int": 623,
+    "word": "cegukan"
+  },
+  {
+    "int": 624,
+    "word": "ketombe"
+  },
+  {
+    "int": 625,
+    "word": "kesakitan"
+  },
+  {
+    "int": 626,
+    "word": "dikemas"
+  },
+  {
+    "int": 627,
+    "word": "kemarin"
+  },
+  {
+    "int": 628,
+    "word": "udara"
+  },
+  {
+    "int": 629,
+    "word": "konsentrasi"
+  },
+  {
+    "int": 630,
+    "word": "berkedut"
+  },
+  {
+    "int": 631,
+    "word": "timbul"
+  },
+  {
+    "int": 632,
+    "word": "lidah"
+  },
+  {
+    "int": 633,
+    "word": "saluran"
+  },
+  {
+    "int": 634,
+    "word": "berlangsung"
+  },
+  {
+    "int": 635,
+    "word": "menimbulkan"
+  },
+  {
+    "int": 636,
+    "word": "kejernihan"
+  },
+  {
+    "int": 637,
+    "word": "mental"
+  },
+  {
+    "int": 638,
+    "word": "melupakan"
+  },
+  {
+    "int": 639,
+    "word": "keluarkan"
+  },
+  {
+    "int": 640,
+    "word": "ditangani"
+  },
+  {
+    "int": 641,
+    "word": "masa"
+  },
+  {
+    "int": 642,
+    "word": "kerontokan"
+  },
+  {
+    "int": 643,
+    "word": "panggul"
+  },
+  {
+    "int": 644,
+    "word": "berfungsi"
+  },
+  {
+    "int": 645,
+    "word": "mendung"
+  },
+  {
+    "int": 646,
+    "word": "dimana"
+  },
+  {
+    "int": 647,
+    "word": "kegiatan"
+  },
+  {
+    "int": 648,
+    "word": "kehabisan"
+  },
+  {
+    "int": 649,
+    "word": "mencerna"
+  },
+  {
+    "int": 650,
+    "word": "terbentuk"
+  },
+  {
+    "int": 651,
+    "word": "memberi"
+  },
+  {
+    "int": 652,
+    "word": "karenanya"
+  },
+  {
+    "int": 653,
+    "word": "menangani"
+  },
+  {
+    "int": 654,
+    "word": "lakukan"
+  },
+  {
+    "int": 655,
+    "word": "siklus"
+  },
+  {
+    "int": 656,
+    "word": "keputihan"
+  },
+  {
+    "int": 657,
+    "word": "terduga"
+  },
+  {
+    "int": 658,
+    "word": "tersinggung"
+  },
+  {
+    "int": 659,
+    "word": "suasana"
+  },
+  {
+    "int": 660,
+    "word": "kulitku"
+  },
+  {
+    "int": 661,
+    "word": "mengosongkan"
+  },
+  {
+    "int": 662,
+    "word": "kandung"
+  },
+  {
+    "int": 663,
+    "word": "menjijikkan"
+  },
+  {
+    "int": 664,
+    "word": "menggaruknya"
+  },
+  {
+    "int": 665,
+    "word": "menyulitkan"
+  },
+  {
+    "int": 666,
+    "word": "lipatan"
+  },
+  {
+    "int": 667,
+    "word": "miliki"
+  },
+  {
+    "int": 668,
+    "word": "antara"
+  },
+  {
+    "int": 669,
+    "word": "diskromik"
+  },
+  {
+    "int": 670,
+    "word": "asupan"
+  },
+  {
+    "int": 671,
+    "word": "frekuensi"
+  },
+  {
+    "int": 672,
+    "word": "memprihatinkan"
+  },
+  {
+    "int": 673,
+    "word": "ginjal"
+  },
+  {
+    "int": 674,
+    "word": "masuk"
+  },
+  {
+    "int": 675,
+    "word": "bertingkah"
+  },
+  {
+    "int": 676,
+    "word": "bergetar"
+  },
+  {
+    "int": 677,
+    "word": "pergelangan"
+  },
+  {
+    "int": 678,
+    "word": "pegal"
+  },
+  {
+    "int": 679,
+    "word": "menggerakkan"
+  },
+  {
+    "int": 680,
+    "word": "tingkat"
+  },
+  {
+    "int": 681,
+    "word": "menghilangkannya"
+  },
+  {
+    "int": 682,
+    "word": "mau"
+  },
+  {
+    "int": 683,
+    "word": "empat"
+  },
+  {
+    "int": 684,
+    "word": "kendali"
+  },
+  {
+    "int": 685,
+    "word": "penglihatanku"
+  },
+  {
+    "int": 686,
+    "word": "ekstrem"
+  },
+  {
+    "int": 687,
+    "word": "berkarat"
+  },
+  {
+    "int": 688,
+    "word": "bertenaga"
+  },
+  {
+    "int": 689,
+    "word": "mampu"
+  },
+  {
+    "int": 690,
+    "word": "memotivasi"
+  },
+  {
+    "int": 691,
+    "word": "kejang"
+  },
+  {
+    "int": 692,
+    "word": "pertama"
+  },
+  {
+    "int": 693,
+    "word": "bangku"
+  },
+  {
+    "int": 694,
+    "word": "daripada"
+  },
+  {
+    "int": 695,
+    "word": "kubatukkan"
+  },
+  {
+    "int": 696,
+    "word": "ibu"
+  },
+  {
+    "int": 697,
+    "word": "membunuhku"
+  },
+  {
+    "int": 698,
+    "word": "kekuatan"
+  },
+  {
+    "int": 699,
+    "word": "selera"
+  },
+  {
+    "int": 700,
+    "word": "dangkal"
+  },
+  {
+    "int": 701,
+    "word": "urinku"
+  },
+  {
+    "int": 702,
+    "word": "jarang"
+  },
+  {
+    "int": 703,
+    "word": "isyarat"
+  },
+  {
+    "int": 704,
+    "word": "bersama"
+  },
+  {
+    "int": 705,
+    "word": "akut"
+  },
+  {
+    "int": 706,
+    "word": "kalanya"
+  },
+  {
+    "int": 707,
+    "word": "menjalankan"
+  },
+  {
+    "int": 708,
+    "word": "bulan"
+  },
+  {
+    "int": 709,
+    "word": "musim"
+  },
+  {
+    "int": 710,
+    "word": "melembabkan"
+  },
+  {
+    "int": 711,
+    "word": "pelembap"
+  },
+  {
+    "int": 712,
+    "word": "nafasku"
+  },
+  {
+    "int": 713,
+    "word": "lalu"
+  },
+  {
+    "int": 714,
+    "word": "mendapatkannya"
+  },
+  {
+    "int": 715,
+    "word": "kembali"
+  },
+  {
+    "int": 716,
+    "word": "muntahan"
+  },
+  {
+    "int": 717,
+    "word": "berton"
+  },
+  {
+    "int": 718,
+    "word": "ton"
+  },
+  {
+    "int": 719,
+    "word": "butuh"
+  },
+  {
+    "int": 720,
+    "word": "dahi"
+  },
+  {
+    "int": 721,
+    "word": "keduanya"
+  },
+  {
+    "int": 722,
+    "word": "berfluktuasi"
+  },
+  {
+    "int": 723,
+    "word": "terjaga"
+  },
+  {
+    "int": 724,
+    "word": "pulang"
+  },
+  {
+    "int": 725,
+    "word": "kerja"
+  },
+  {
+    "int": 726,
+    "word": "membutuhkan"
+  },
+  {
+    "int": 727,
+    "word": "kedua"
+  },
+  {
+    "int": 728,
+    "word": "gugup"
+  },
+  {
+    "int": 729,
+    "word": "mengkonsumsi"
+  },
+  {
+    "int": 730,
+    "word": "mencondongkan"
+  },
+  {
+    "int": 731,
+    "word": "depan"
+  },
+  {
+    "int": 732,
+    "word": "khas"
+  },
+  {
+    "int": 733,
+    "word": "meskipun"
+  },
+  {
+    "int": 734,
+    "word": "hangat"
+  },
+  {
+    "int": 735,
+    "word": "kulitnya"
+  },
+  {
+    "int": 736,
+    "word": "obesitas"
+  },
+  {
+    "int": 737,
+    "word": "rekomendasikan"
+  },
+  {
+    "int": 738,
+    "word": "nodus"
+  },
+  {
+    "int": 739,
+    "word": "hidungku"
+  },
+  {
+    "int": 740,
+    "word": "terkuras"
+  },
+  {
+    "int": 741,
+    "word": "minggu"
+  },
+  {
+    "int": 742,
+    "word": "tertutup"
+  },
+  {
+    "int": 743,
+    "word": "gosok"
+  },
+  {
+    "int": 744,
+    "word": "episode"
+  },
+  {
+    "int": 745,
+    "word": "naiknya"
+  },
+  {
+    "int": 746,
+    "word": "berulang"
+  },
+  {
+    "int": 747,
+    "word": "merupakan"
+  },
+  {
+    "int": 748,
+    "word": "lumayan"
+  },
+  {
+    "int": 749,
+    "word": "kebanyakan"
+  },
+  {
+    "int": 750,
+    "word": "tambahan"
+  },
+  {
+    "int": 751,
+    "word": "jahat"
+  },
+  {
+    "int": 752,
+    "word": "berhubungan"
+  },
+  {
+    "int": 753,
+    "word": "pikiranku"
+  },
+  {
+    "int": 754,
+    "word": "leherku"
+  },
+  {
+    "int": 755,
+    "word": "mendidih"
+  },
+  {
+    "int": 756,
+    "word": "berbuat"
+  },
+  {
+    "int": 757,
+    "word": "lepuh"
+  },
+  {
+    "int": 758,
+    "word": "meler"
+  },
+  {
+    "int": 759,
+    "word": "logam"
+  },
+  {
+    "int": 760,
+    "word": "aroma"
+  },
+  {
+    "int": 761,
+    "word": "memerah"
+  },
+  {
+    "int": 762,
+    "word": "lunak"
+  },
+  {
+    "int": 763,
+    "word": "lembap"
+  },
+  {
+    "int": 764,
+    "word": "meneteskan"
+  },
+  {
+    "int": 765,
+    "word": "menyumbat"
+  },
+  {
+    "int": 766,
+    "word": "semalam"
+  },
+  {
+    "int": 767,
+    "word": "duduk"
+  },
+  {
+    "int": 768,
+    "word": "menambah"
+  },
+  {
+    "int": 769,
+    "word": "sambil"
+  },
+  {
+    "int": 770,
+    "word": "membakar"
+  },
+  {
+    "int": 771,
+    "word": "basah"
+  },
+  {
+    "int": 772,
+    "word": "jatuh"
+  },
+  {
+    "int": 773,
+    "word": "kami"
+  },
+  {
+    "int": 774,
+    "word": "sekitarnya"
+  },
+  {
+    "int": 775,
+    "word": "metalik"
+  },
+  {
+    "int": 776,
+    "word": "mengingat"
+  },
+  {
+    "int": 777,
+    "word": "semacam"
+  },
+  {
+    "int": 778,
+    "word": "banget"
+  },
+  {
+    "int": 779,
+    "word": "palpitasi"
+  },
+  {
+    "int": 780,
+    "word": "minat"
+  },
+  {
+    "int": 781,
+    "word": "penyakit"
+  },
+  {
+    "int": 782,
+    "word": "sepatu"
+  },
+  {
+    "int": 783,
+    "word": "mengerti"
+  },
+  {
+    "int": 784,
+    "word": "tertahankan"
+  },
+  {
+    "int": 785,
+    "word": "gairah"
+  },
+  {
+    "int": 786,
+    "word": "seksual"
+  },
+  {
+    "int": 787,
+    "word": "konstipasi"
+  },
+  {
+    "int": 788,
+    "word": "patah"
+  },
+  {
+    "int": 789,
+    "word": "tulang"
+  },
+  {
+    "int": 790,
+    "word": "gila"
+  },
+  {
+    "int": 791,
+    "word": "mengandung"
+  },
+  {
+    "int": 792,
+    "word": "sebagian"
+  },
+  {
+    "int": 793,
+    "word": "titik"
+  },
+  {
+    "int": 794,
+    "word": "bab"
+  },
+  {
+    "int": 795,
+    "word": "ketiak"
+  },
+  {
+    "int": 796,
+    "word": "produksi"
+  },
+  {
+    "int": 797,
+    "word": "hai"
+  },
+  {
+    "int": 798,
+    "word": "sejumlah"
+  },
+  {
+    "int": 799,
+    "word": "encer"
+  },
+  {
+    "int": 800,
+    "word": "diwariskan"
+  },
+  {
+    "int": 801,
+    "word": "pikiran"
+  },
+  {
+    "int": 802,
+    "word": "epidermis"
+  },
+  {
+    "int": 803,
+    "word": "menyadari"
+  },
+  {
+    "int": 804,
+    "word": "menggelitik"
+  },
+  {
+    "int": 805,
+    "word": "fluktuasi"
+  },
+  {
+    "int": 806,
+    "word": "diobati"
+  },
+  {
+    "int": 807,
+    "word": "nyenyak"
+  },
+  {
+    "int": 808,
+    "word": "mengira"
+  },
+  {
+    "int": 809,
+    "word": "istirahat"
+  },
+  {
+    "int": 810,
+    "word": "pemarah"
+  },
+  {
+    "int": 811,
+    "word": "murung"
+  },
+  {
+    "int": 812,
+    "word": "perbedaan"
+  },
+  {
+    "int": 813,
+    "word": "bulanan"
+  },
+  {
+    "int": 814,
+    "word": "menumpuk"
+  },
+  {
+    "int": 815,
+    "word": "dua"
+  },
+  {
+    "int": 816,
+    "word": "lepuhan"
+  },
+  {
+    "int": 817,
+    "word": "dihadapi"
+  },
+  {
+    "int": 818,
+    "word": "hidup"
+  },
+  {
+    "int": 819,
+    "word": "perlu"
+  },
+  {
+    "int": 820,
+    "word": "coraknya"
+  },
+  {
+    "int": 821,
+    "word": "dengan kulit"
+  },
+  {
+    "int": 822,
+    "word": "menyertai"
+  },
+  {
+    "int": 823,
+    "word": "terlihat seperti nodul"
+  },
+  {
+    "int": 824,
+    "word": "semangat"
+  },
+  {
+    "int": 825,
+    "word": "desakan"
+  },
+  {
+    "int": 826,
+    "word": "akal"
+  },
+  {
+    "int": 827,
+    "word": "dewasa"
+  },
+  {
+    "int": 828,
+    "word": "pine"
+  },
+  {
+    "int": 829,
+    "word": "tree"
+  },
+  {
+    "int": 830,
+    "word": "state"
+  },
+  {
+    "int": 831,
+    "word": "indra"
+  },
+  {
+    "int": 832,
+    "word": "melaju"
+  },
+  {
+    "int": 833,
+    "word": "kotor"
+  },
+  {
+    "int": 834,
+    "word": "diam"
+  },
+  {
+    "int": 835,
+    "word": "geli"
+  },
+  {
+    "int": 836,
+    "word": "edema"
+  },
+  {
+    "int": 837,
+    "word": "okular"
+  },
+  {
+    "int": 838,
+    "word": "lamban"
+  },
+  {
+    "int": 839,
+    "word": "berkurang"
+  },
+  {
+    "int": 840,
+    "word": "mengiritasi"
+  },
+  {
+    "int": 841,
+    "word": "menebal"
+  },
+  {
+    "int": 842,
+    "word": "hei"
+  },
+  {
+    "int": 843,
+    "word": "diproduksi"
+  },
+  {
+    "int": 844,
+    "word": "sebabnya"
+  },
+  {
+    "int": 845,
+    "word": "menyerang"
+  },
+  {
+    "int": 846,
+    "word": "peringatan"
+  },
+  {
+    "int": 847,
+    "word": "tahan"
+  },
+  {
+    "int": 848,
+    "word": "kecepatan"
+  },
+  {
+    "int": 849,
+    "word": "gigih"
+  },
+  {
+    "int": 850,
+    "word": "menggerogoti"
+  },
+  {
+    "int": 851,
+    "word": "kekuningan"
+  },
+  {
+    "int": 852,
+    "word": "sarankan"
+  },
+  {
+    "int": 853,
+    "word": "sarat"
+  },
+  {
+    "int": 854,
+    "word": "dulu"
+  },
+  {
+    "int": 855,
+    "word": "menghilang"
+  },
+  {
+    "int": 856,
+    "word": "halo"
+  },
+  {
+    "int": 857,
+    "word": "pendek"
+  },
+  {
+    "int": 858,
+    "word": "tindakan"
+  },
+  {
+    "int": 859,
+    "word": "pengap"
+  },
+  {
+    "int": 860,
+    "word": "kokoh"
+  },
+  {
+    "int": 861,
+    "word": "bertambah"
+  },
+  {
+    "int": 862,
+    "word": "mengendalikannya"
+  },
+  {
+    "int": 863,
+    "word": "maine"
+  },
+  {
+    "int": 864,
+    "word": "disengaja"
+  },
+  {
+    "int": 865,
+    "word": "dibanjiri"
+  },
+  {
+    "int": 866,
+    "word": "hawa"
+  },
+  {
+    "int": 867,
+    "word": "lesinya"
+  },
+  {
+    "int": 868,
+    "word": "udaranya"
+  },
+  {
+    "int": 869,
+    "word": "penampilan"
+  },
+  {
+    "int": 870,
+    "word": "hilangnya"
+  },
+  {
+    "int": 871,
+    "word": "seolah"
+  },
+  {
+    "int": 872,
+    "word": "olah"
+  },
+  {
+    "int": 873,
+    "word": "sehat"
+  },
+  {
+    "int": 874,
+    "word": "diisi"
+  },
+  {
+    "int": 875,
+    "word": "pelipis"
+  },
+  {
+    "int": 876,
+    "word": "kapan"
+  },
+  {
+    "int": 877,
+    "word": "posisi"
+  },
+  {
+    "int": 878,
+    "word": "kurangnya"
+  },
+  {
+    "int": 879,
+    "word": "tinggal"
+  },
+  {
+    "int": 880,
+    "word": "aliran"
+  },
+  {
+    "int": 881,
+    "word": "hasil"
+  },
+  {
+    "int": 882,
+    "word": "engahan"
+  },
+  {
+    "int": 883,
+    "word": "rapuh"
+  },
+  {
+    "int": 884,
+    "word": "menghasilkan"
+  },
+  {
+    "int": 885,
+    "word": "perjalanan"
+  },
+  {
+    "int": 886,
+    "word": "mengemudi"
+  },
+  {
+    "int": 887,
+    "word": "flu"
+  },
+  {
+    "int": 888,
+    "word": "seharian"
+  },
+  {
+    "int": 889,
+    "word": "digosok"
+  },
+  {
+    "int": 890,
+    "word": "berbelanja"
+  },
+  {
+    "int": 891,
+    "word": "bukan"
+  },
+  {
+    "int": 892,
+    "word": "pita"
+  },
+  {
+    "int": 893,
+    "word": "lingkungan"
+  },
+  {
+    "int": 894,
+    "word": "nada"
+  },
+  {
+    "int": 895,
+    "word": "bedak"
+  },
+  {
+    "int": 896,
+    "word": "kesadaran"
+  },
+  {
+    "int": 897,
+    "word": "malu"
+  },
+  {
+    "int": 898,
+    "word": "masalahnya"
+  },
+  {
+    "int": 899,
+    "word": "lainnya"
+  },
+  {
+    "int": 900,
+    "word": "antaranya"
+  },
+  {
+    "int": 901,
+    "word": "sana"
+  },
+  {
+    "int": 902,
+    "word": "kecokelatan"
+  },
+  {
+    "int": 903,
+    "word": "perlahan"
+  },
+  {
+    "int": 904,
+    "word": "berlimpah"
+  },
+  {
+    "int": 905,
+    "word": "tersesat"
+  },
+  {
+    "int": 906,
+    "word": "mendadak"
+  },
+  {
+    "int": 907,
+    "word": "hingga"
+  },
+  {
+    "int": 908,
+    "word": "tited"
+  },
+  {
+    "int": 909,
+    "word": "kedutan"
+  },
+  {
+    "int": 910,
+    "word": "tremor"
+  },
+  {
+    "int": 911,
+    "word": "menetes"
+  },
+  {
+    "int": 912,
+    "word": "bagiku"
+  },
+  {
+    "int": 913,
+    "word": "menyumbatnya"
+  },
+  {
+    "int": 914,
+    "word": "tertahan"
+  },
+  {
+    "int": 915,
+    "word": "bintil"
+  },
+  {
+    "int": 916,
+    "word": "berkat"
+  },
+  {
+    "int": 917,
+    "word": "sampah"
+  },
+  {
+    "int": 918,
+    "word": "beristirahat"
+  },
+  {
+    "int": 919,
+    "word": "koordinasi"
+  },
+  {
+    "int": 920,
+    "word": "terputus"
+  },
+  {
+    "int": 921,
+    "word": "kacau"
+  },
+  {
+    "int": 922,
+    "word": "padam"
+  },
+  {
+    "int": 923,
+    "word": "pemanasan"
+  },
+  {
+    "int": 924,
+    "word": "bocor"
+  },
+  {
+    "int": 925,
+    "word": "kemaluan"
+  },
+  {
+    "int": 926,
+    "word": "berkendara"
+  },
+  {
+    "int": 927,
+    "word": "bereaksi"
+  },
+  {
+    "int": 928,
+    "word": "berhati"
+  },
+  {
+    "int": 929,
+    "word": "produk"
+  },
+  {
+    "int": 930,
+    "word": "gunakan"
+  },
+  {
+    "int": 931,
+    "word": "berkepanjangan"
+  },
+  {
+    "int": 932,
+    "word": "bertepatan"
+  },
+  {
+    "int": 933,
+    "word": "beraktivitas"
+  },
+  {
+    "int": 934,
+    "word": "diduga"
+  },
+  {
+    "int": 935,
+    "word": "lubang"
+  },
+  {
+    "int": 936,
+    "word": "kenaikan"
+  },
+  {
+    "int": 937,
+    "word": "bersuara"
+  },
+  {
+    "int": 938,
+    "word": "mengelola"
+  },
+  {
+    "int": 939,
+    "word": "tengah"
+  },
+  {
+    "int": 940,
+    "word": "konferensi"
+  },
+  {
+    "int": 941,
+    "word": "topik"
+  },
+  {
+    "int": 942,
+    "word": "ditekan"
+  },
+  {
+    "int": 943,
+    "word": "cokelat"
+  },
+  {
+    "int": 944,
+    "word": "sadar"
+  },
+  {
+    "int": 945,
+    "word": "kelamin"
+  },
+  {
+    "int": 946,
+    "word": "tanda"
+  },
+  {
+    "int": 947,
+    "word": "tertidur"
+  },
+  {
+    "int": 948,
+    "word": "jenuh"
+  },
+  {
+    "int": 949,
+    "word": "kegoyahan"
+  },
+  {
+    "int": 950,
+    "word": "rentang"
+  },
+  {
+    "int": 951,
+    "word": "menghalangi"
+  },
+  {
+    "int": 952,
+    "word": "aromanya"
+  },
+  {
+    "int": 953,
+    "word": "terganjal"
+  },
+  {
+    "int": 954,
+    "word": "tadi"
+  },
+  {
+    "int": 955,
+    "word": "mempertahankan"
+  },
+  {
+    "int": 956,
+    "word": "drastis"
+  },
+  {
+    "int": 957,
+    "word": "sungguh"
+  },
+  {
+    "int": 958,
+    "word": "lihat"
+  },
+  {
+    "int": 959,
+    "word": "keluarnya"
+  },
+  {
+    "int": 960,
+    "word": "matang"
+  },
+  {
+    "int": 961,
+    "word": "negara"
+  },
+  {
+    "int": 962,
+    "word": "amerika"
+  },
+  {
+    "int": 963,
+    "word": "beroperasi"
+  },
+  {
+    "int": 964,
+    "word": "dahaknya"
+  },
+  {
+    "int": 965,
+    "word": "bertambahnya"
+  },
+  {
+    "int": 966,
+    "word": "dikelilingi"
+  },
+  {
+    "int": 967,
+    "word": "payah"
+  },
+  {
+    "int": 968,
+    "word": "menghalanginya"
+  },
+  {
+    "int": 969,
+    "word": "halus"
+  },
+  {
+    "int": 970,
+    "word": "menyelesaikan"
+  },
+  {
+    "int": 971,
+    "word": "takut"
+  },
+  {
+    "int": 972,
+    "word": "denyut"
+  },
+  {
+    "int": 973,
+    "word": "nadi"
+  },
+  {
+    "int": 974,
+    "word": "haid"
+  },
+  {
+    "int": 975,
+    "word": "menyetir"
+  },
+  {
+    "int": 976,
+    "word": "erupsi"
+  },
+  {
+    "int": 977,
+    "word": "nodular"
+  },
+  {
+    "int": 978,
+    "word": "intermiten"
+  },
+  {
+    "int": 979,
+    "word": "setinggi"
+  },
+  {
+    "int": 980,
+    "word": "langit"
+  },
+  {
+    "int": 981,
+    "word": "frustasi"
+  },
+  {
+    "int": 982,
+    "word": "meluas"
+  },
+  {
+    "int": 983,
+    "word": "kelelahannya"
+  },
+  {
+    "int": 984,
+    "word": "sembab"
+  },
+  {
+    "int": 985,
+    "word": "ekstremitas"
+  },
+  {
+    "int": 986,
+    "word": "diturunkan"
+  },
+  {
+    "int": 987,
+    "word": "menguras"
+  },
+  {
+    "int": 988,
+    "word": "hasrat"
+  },
+  {
+    "int": 989,
+    "word": "coklat"
+  },
+  {
+    "int": 990,
+    "word": "berketombe"
+  },
+  {
+    "int": 991,
+    "word": "barang"
+  },
+  {
+    "int": 992,
+    "word": "memakai"
+  },
+  {
+    "int": 993,
+    "word": "dimulai"
+  },
+  {
+    "int": 994,
+    "word": "rawan"
+  },
+  {
+    "int": 995,
+    "word": "tebal"
+  },
+  {
+    "int": 996,
+    "word": "jumlah"
+  },
+  {
+    "int": 997,
+    "word": "satu"
+  },
+  {
+    "int": 998,
+    "word": "bermunculan"
+  },
+  {
+    "int": 999,
+    "word": "ingatan"
+  },
+  {
+    "int": 1000,
+    "word": "ketegangan"
+  },
+  {
+    "int": 1001,
+    "word": "diarenya"
+  },
+  {
+    "int": 1002,
+    "word": "cair"
+  },
+  {
+    "int": 1003,
+    "word": "segera"
+  },
+  {
+    "int": 1004,
+    "word": "digerakkan"
+  },
+  {
+    "int": 1005,
+    "word": "dibuat"
+  },
+  {
+    "int": 1006,
+    "word": "langsung"
+  },
+  {
+    "int": 1007,
+    "word": "penderitaan"
+  },
+  {
+    "int": 1008,
+    "word": "terinfeksi"
+  },
+  {
+    "int": 1009,
+    "word": "kasar"
+  },
+  {
+    "int": 1010,
+    "word": "mengakibatkan"
+  },
+  {
+    "int": 1011,
+    "word": "rakus"
+  },
+  {
+    "int": 1012,
+    "word": "darahnya"
+  },
+  {
+    "int": 1013,
+    "word": "pakaian"
+  },
+  {
+    "int": 1014,
+    "word": "kepenuhan"
+  },
+  {
+    "int": 1015,
+    "word": "kuyup"
+  },
+  {
+    "int": 1016,
+    "word": "otakku"
+  },
+  {
+    "int": 1017,
+    "word": "tergores"
+  },
+  {
+    "int": 1018,
+    "word": "halnya"
+  },
+  {
+    "int": 1019,
+    "word": "anda"
+  },
+  {
+    "int": 1020,
+    "word": "biak"
+  },
+  {
+    "int": 1021,
+    "word": "lembut"
+  },
+  {
+    "int": 1022,
+    "word": "pulih"
+  },
+  {
+    "int": 1023,
+    "word": "kendalikan"
+  },
+  {
+    "int": 1024,
+    "word": "dikemudikan"
+  },
+  {
+    "int": 1025,
+    "word": "tiga"
+  },
+  {
+    "int": 1026,
+    "word": "menyesuaikan"
+  },
+  {
+    "int": 1027,
+    "word": "total"
+  },
+  {
+    "int": 1028,
+    "word": "keterampilan"
+  },
+  {
+    "int": 1029,
+    "word": "menyentuh"
+  },
+  {
+    "int": 1030,
+    "word": "berlalunya"
+  },
+  {
+    "int": 1031,
+    "word": "mood"
+  },
+  {
+    "int": 1032,
+    "word": "mengurangi"
+  },
+  {
+    "int": 1033,
+    "word": "bu"
+  },
+  {
+    "int": 1034,
+    "word": "pengeluaran"
+  },
+  {
+    "int": 1035,
+    "word": "urinnya"
+  },
+  {
+    "int": 1036,
+    "word": "membuatku"
+  },
+  {
+    "int": 1037,
+    "word": "dasar"
+  },
+  {
+    "int": 1038,
+    "word": "memproduksi"
+  },
+  {
+    "int": 1039,
+    "word": "bahagia"
+  },
+  {
+    "int": 1040,
+    "word": "getaran"
+  },
+  {
+    "int": 1041,
+    "word": "palipatasi"
+  },
+  {
+    "int": 1042,
+    "word": "berkerak"
+  },
+  {
+    "int": 1043,
+    "word": "dibutuhkan"
+  },
+  {
+    "int": 1044,
+    "word": "noda"
+  },
+  {
+    "int": 1045,
+    "word": "menit"
+  },
+  {
+    "int": 1046,
+    "word": "berkali"
+  },
+  {
+    "int": 1047,
+    "word": "entah"
+  },
+  {
+    "int": 1048,
+    "word": "berjalannya"
+  },
+  {
+    "int": 1049,
+    "word": "dihasilkan"
+  },
+  {
+    "int": 1050,
+    "word": "kegelisahan"
+  },
+  {
+    "int": 1051,
+    "word": "kesempatan"
+  },
+  {
+    "int": 1052,
+    "word": "langka"
+  },
+  {
+    "int": 1053,
+    "word": "sporadis"
+  },
+  {
+    "int": 1054,
+    "word": "akui"
+  },
+  {
+    "int": 1055,
+    "word": "mengharapkan"
+  },
+  {
+    "int": 1056,
+    "word": "melemah"
+  },
+  {
+    "int": 1057,
+    "word": "keluaran"
+  },
+  {
+    "int": 1058,
+    "word": "mengendalikan"
+  },
+  {
+    "int": 1059,
+    "word": "konstan"
+  }
+]
