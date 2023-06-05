@@ -15,6 +15,6 @@ routers.post(
   [multer.single("photo_article"), auth, imgUpload.uploadToGcs],
   articleControllers.postArticle
 );
-
+routers.get("/data",articleControllers.getAllarticle)
 routers.get("/:id", multer.single(""), articleControllers.getArticle);
 module.exports = routers;

@@ -112,7 +112,6 @@ module.exports = {
           });
 
         let dataUser = JSON.parse(JSON.stringify(result[0]));
-        delete dataUser.user_id;
         delete dataUser.password;
         delete dataUser.creation_date;
 
@@ -169,9 +168,9 @@ module.exports = {
   updateProfile: (req, res) => {
     const ext = /\.(jpg|jpeg|png|JPG|PNG|JPEG)/;
     let imageUrl = "";
-    let userid = req.body.user_id;
-    let username = req.body.username;
-    let password = req.body.password;
+    let userid = req.user.user_id;
+    let username = req.user.username;
+    let password = CryptoJs.MD5(req.body.password + process.env.PASS_KEY).toString()
     let fullname = req.body.full_name;
     let phonenumber = req.body.phone_number;
     let email = req.body.email;
@@ -181,6 +180,7 @@ module.exports = {
     let province = req.body.province;
     let postal_code = req.body.postal_code;
     let country = req.body.country;
+   
     const query =
       "UPDATE tbl_user SET username = ?, password = ?, full_name = ?, phone_number = ?, email = ?, birthday = ?, photo_profile = ? WHERE username = ?; UPDATE tbl_address SET address=?, city=?, province=?, postal_code=?, country=? where user_id=?";
     //security filter for exploit upload file
@@ -189,12 +189,13 @@ module.exports = {
         !req.file.mimetype.includes("image/") &&
         !req.file.originalname.match(ext)
       ) {
-        res.status(500).send("error file");
+        res.status(500).send({message: "error file", error:true});
       }
       photo = req.file.cloudStoragePublicUrl;
     } else {
-      res.status(500).send("empty file");
+      res.status(500).send({message: "empty file", error: true});
     }
+    
     db.query(
       query,
       [
@@ -217,25 +218,25 @@ module.exports = {
         if (err) {
           res.status(500).send({ error: true, message: err.sqlMessage });
         } else {
-          res.send({ message: "Update Successful" });
+          res.send({ message: "Update Successful", error: false});
         }
       }
     );
   },
   getProfile: (req, res) => {
-    const user_id = req.body.user_id;
+    const user_id = req.user.user_id;
     db.query(
       "SELECT * from tbl_user JOIN tbl_address ON  tbl_user.user_id=tbl_address.user_id where tbl_user.user_id=?",
       [user_id],
       (err, result) => {
         let dataUser = JSON.parse(JSON.stringify(result[0]));
         if (err) {
-          res.status(500).send({ message: err.sqlMessage });
+          res.status(500).send({ message: err.sqlMessage, error: true });
         } else {
-          res.send(dataUser);
+          res.send({dataUser, error: false});
         }
       }
-    );
+    )
   },
   forgotPassword: (req, res) => {
     let { username } = req.body;
@@ -244,7 +245,7 @@ module.exports = {
       [username],
       (err, result) => {
         if (err) {
-          res.status(500).send({ user_valid: false });
+          res.status(500).send({ user_valid: false, error: true });
         } else {
           if (result.length > 0) {
             let dataUser = JSON.parse(JSON.stringify(result[0]));
@@ -263,18 +264,18 @@ module.exports = {
 
             transporter.sendMail(formatmail, (errMail, resMail) => {
               if (errMail) {
-                res.status(500).send({ message: errMail, err: errMail });
+                res.status(500).send({ message: errMail, err: errMail, error: true });
               } else {
                 db.query(
                   "UPDATE tbl_user SET password = ? where username = ?",
                   [password, username],
                   (err, result) => {
                     if (err) {
-                      res.status(500).send({ message: err.sqlMessage });
+                      res.status(500).send({ message: err.sqlMessage, error: true });
                     } else {
                       res.send({
                         messages: `Check your new password on ${mailku}`,
-                        success: true,
+                        error: false,
                       });
                     }
                   }
@@ -282,7 +283,7 @@ module.exports = {
               }
             });
           } else {
-            res.send({ messages: "Invalid account", success: false });
+            res.send({ messages: "Invalid account", error: false });
           }
         }
       }
