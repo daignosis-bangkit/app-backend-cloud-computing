@@ -10,22 +10,18 @@ module.exports = {
       input = await Axios.get(process.env.DICT_INPUT_ID);
       input = input.data;
     }
+    input = input.map((i) => i.word);
+
     let tokenized = [];
     word.split(" ").forEach((token) => {
-      input.forEach((dict) => {
-        if (
-          dict.word === token &&
-          token !== "<OOV>" &&
-          !tokenized.includes(dict.int)
-        )
-          tokenized.push(dict.int);
-        else if (!tokenized.includes(1)) tokenized.push(1);
-      });
+      const tokenIndex = input.indexOf(token);
+      if (tokenIndex > 0) tokenized.push(tokenIndex + 1);
+      else tokenized.push(1);
     });
 
     if (tokenized.length < 120)
       for (let i = tokenized.length; i < 120; i++) tokenized.push(0);
-
+    
     return tokenized;
   },
   toWord: async (arr, language) => {
@@ -49,7 +45,9 @@ module.exports = {
       Math.random() * (sentences.data.english.length - 0) + 0
     );
     let sentence =
-      language === "english" ? sentences.data.english : sentences.data.indonesian;
+      language === "english"
+        ? sentences.data.english
+        : sentences.data.indonesian;
     const selectedSentences = sentence[randomSentencesNumber];
     sentence = selectedSentences.replace("{symptoms}", symptoms);
 
