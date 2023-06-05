@@ -1,13 +1,15 @@
-const input_en = require("../static/dict_input_en.json");
-const input_id = require("../static/dict_input_id.json");
-const output = require("../static/dict_output_desc_en.json");
-const sentences = require("../static/sentences.json");
+const Axios = require("axios");
 
 module.exports = {
-  toInt: (word, language) => {
+  toInt: async (word, language) => {
     let input;
-    if (language === "english") input = input_en;
-    else if (language === "indonesian") input = input_id;
+    if (language === "english") {
+      input = await Axios.get(process.env.DICT_INPUT_EN);
+      input = input.data;
+    } else if (language === "indonesian") {
+      input = await Axios.get(process.env.DICT_INPUT_ID);
+      input = input.data;
+    }
     let tokenized = [];
     word.split(" ").forEach((token) => {
       input.forEach((dict) => {
@@ -26,7 +28,7 @@ module.exports = {
 
     return tokenized;
   },
-  toWord: (arr, language) => {
+  toWord: async (arr, language) => {
     const tokenized = arr[0].slice();
     const sorted = arr[0].sort((a, b) => {
       return b - a;
@@ -37,15 +39,17 @@ module.exports = {
     });
 
     let symptoms;
-    output.forEach((dict) => {
+    let output = await Axios.get(process.env.DICT_OUTPUT_DESC_EN);
+    output.data.forEach((dict) => {
       if (dict.int === highestProbIndex) symptoms = dict.symptoms;
     });
 
+    const sentences = await Axios.get(process.env.SENTENCES);
     const randomSentencesNumber = Math.floor(
-      Math.random() * (sentences.english.length - 0) + 0
+      Math.random() * (sentences.data.english.length - 0) + 0
     );
     let sentence =
-      language === "english" ? sentences.english : sentences.indonesian;
+      language === "english" ? sentences.data.english : sentences.data.indonesian;
     const selectedSentences = sentence[randomSentencesNumber];
     sentence = selectedSentences.replace("{symptoms}", symptoms);
 

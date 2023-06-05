@@ -62,7 +62,7 @@ module.exports = {
               messageLanguage === "indonesian"
             ) {
               const inputData = [
-                tokenizer.toInt(data.message, messageLanguage),
+                await tokenizer.toInt(data.message, messageLanguage),
               ];
               const inputTensor = tf.tensor2d(inputData);
               const model = await tf.loadLayersModel(
@@ -71,7 +71,7 @@ module.exports = {
                   : process.env.MODEL_DESC_ID
               );
               const prediction = model.predict(inputTensor);
-              jsonPrediction = tokenizer.toWord(
+              jsonPrediction = await tokenizer.toWord(
                 prediction.arraySync(),
                 messageLanguage
               );
