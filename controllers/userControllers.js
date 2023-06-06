@@ -17,6 +17,7 @@ module.exports = {
       });
     const user_id = uuid.v4();
     const address_id = uuid.v4();
+    const photo_url = "https://storage.googleapis.com/lukaku_uploaded/blank-profile-picture-hd-images-photo-5.JPG"
     const registration_date = new Date();
     password = CryptoJs.MD5(password + process.env.PASS_KEY).toString();
     db.query(
@@ -40,8 +41,9 @@ module.exports = {
             username, 
             password, 
             email, 
+            photo_profile,
             creation_date) 
-          VALUES (?, ?, ?, ?, ?); 
+          VALUES (?, ?, ?, ?, ?, ?); 
           INSERT INTO tbl_address (
             user_id, 
             address_id, 
@@ -56,6 +58,7 @@ module.exports = {
             username,
             password,
             email,
+            photo_url,
             registration_date,
             user_id,
             address_id,
@@ -283,7 +286,7 @@ module.exports = {
               }
             });
           } else {
-            res.send({ messages: "Invalid account", error: false });
+            res.send({ messages: "Invalid account", error: true });
           }
         }
       }
