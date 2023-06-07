@@ -43,8 +43,8 @@ module.exports = {
           });
 
         db.query(
-          "INSERT INTO tbl_chat VALUES (?, ?, ?, ?, ?)",
-          [chat_id, data.session_id, false, data.message, message_date],
+          "INSERT INTO tbl_chat VALUES (?, ?, ?, ?, ?, ?, ?)",
+          [chat_id, data.session_id, false, data.message, message_date, null, null],
           async (err, result) => {
             if (err)
               return io.emit("error", {
@@ -81,15 +81,24 @@ module.exports = {
             message_date = new Date();
 
             db.query(
-              "INSERT INTO tbl_chat VALUES (?, ?, ?, ?, ?)",
-              [chat_id, data.session_id, true, jsonPrediction, message_date],
+              "INSERT INTO tbl_chat VALUES (?, ?, ?, ?, ?, ?, ?)",
+              [
+                chat_id,
+                data.session_id,
+                true,
+                jsonPrediction.message,
+                message_date,
+                jsonPrediction.disease,
+                jsonPrediction.accuracy,
+              ],
               async (err, result) => {
                 return io.emit("new_message", {
                   message:
                     messageLanguage === "english" ||
                     messageLanguage === "indonesian"
-                      ? await jsonPrediction
+                      ? await jsonPrediction.message
                       : "Oops, I can't detect your language. We only support Indonesian and English.",
+                  accuracy: parseInt(jsonPrediction.accuracy * 100, 10),
                   date: message_date,
                 });
               }
@@ -104,11 +113,12 @@ module.exports = {
     if (!session_id)
       return res.status(422).send({
         error: true,
-        message: "Unprocessable entity: Session data is required but was not provided.",
+        message:
+          "Unprocessable entity: Session data is required but was not provided.",
       });
 
     db.query(
-      `SELECT Chat.is_bot, Chat.message, Chat.date from tbl_user User
+      `SELECT Chat.is_bot, Chat.message, Chat.accuracy, Chat.date from tbl_user User
       JOIN tbl_session Session ON User.user_id = Session.user_id
       JOIN tbl_chat Chat ON Session.session_id = Chat.session_id 
       WHERE Session.session_id = ? AND User.username = ?
