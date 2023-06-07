@@ -58,7 +58,7 @@ module.exports = {
             username,
             password,
             email,
-            photo_url,
+            "https://storage.googleapis.com/lukaku_uploaded/blank-profile-picture-hd-images-photo-5.JPG",
             registration_date,
             user_id,
             address_id,
@@ -233,6 +233,7 @@ module.exports = {
       [user_id],
       (err, result) => {
         let dataUser = JSON.parse(JSON.stringify(result[0]));
+        console.log(dataUser)
         if (err) {
           res.status(500).send({ message: err.sqlMessage, error: true });
         } else {
