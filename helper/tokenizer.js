@@ -39,7 +39,11 @@ module.exports = {
     });
 
     let disease;
-    let output = await Axios.get(process.env.DICT_OUTPUT_DESC_EN);
+    let output;
+    if (language === "english")
+      output = await Axios.get(process.env.DICT_OUTPUT_DESC_EN);
+    else if (language === "indonesian")
+      output = await Axios.get(process.env.DICT_OUTPUT_DESC_ID);
     output.data.forEach((dict) => {
       if (dict.int === highestProbIndex) disease = dict.symptoms;
     });
