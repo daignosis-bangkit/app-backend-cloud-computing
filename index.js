@@ -62,5 +62,5 @@ io.use((socket, next) => {
   else return next(new Error("Authentication error"));
 }).on("connection", (socket) => socketRouters(socket, io));
 
-const port = process.env.PORT || 8080;
+const port = 8081;
 server.listen(port, () => console.log(`this server running on port ${port}`));

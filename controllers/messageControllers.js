@@ -4,6 +4,7 @@ const { db } = require("../helper/configSql");
 const tokenizer = require("../helper/tokenizer");
 const LanguageDetect = require("languagedetect");
 const language = new LanguageDetect();
+const Axios = require("axios")
 
 module.exports = {
   send: (socket, io, data) => {
@@ -50,12 +51,26 @@ module.exports = {
               return io.emit("error", {
                 message: `Error to send message. Error: ${err.message}`,
               });
-
+            let location = data.cordinate
             io.emit("new_message", {
               message: data.message,
               date: message_date,
+              cordinate: location
             });
 
+           let clinic = [] 
+           let url_location = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?keywoard=klinik&key=AIzaSyBgDuDG2kvx-RF7Gfwy13XoUJ8pq6QsgZ0&location=${location}&radius=1000&type=hospital&clinic`
+            await Axios.get(url_location).then(res => {
+              let out = res.data.results
+              for(let i = 0; i < out.length; i++){
+                let data = {
+                  "nama": out[i].name,
+                  "lokasi": out[i].vicinity
+                }
+                clinic.push(data)
+                
+              }
+              })
             let jsonPrediction;
             if (
               messageLanguage === "english" ||
@@ -80,6 +95,7 @@ module.exports = {
             chat_id = uuid.v4();
             message_date = new Date();
 
+
             db.query(
               "INSERT INTO tbl_chat VALUES (?, ?, ?, ?, ?, ?, ?)",
               [
@@ -99,6 +115,7 @@ module.exports = {
                       ? await jsonPrediction.message
                       : "Oops, I can't detect your language. We only support Indonesian and English.",
                   accuracy: parseInt(jsonPrediction.accuracy * 100, 10),
+                  out: "system check you have some nearby location helthy on your location",clinic,
                   date: message_date,
                 });
               }
@@ -130,7 +147,6 @@ module.exports = {
             error: true,
             message: `Internal server error: ${err.message}`,
           });
-
         return res.status(200).send({
           error: false,
           data: result,
