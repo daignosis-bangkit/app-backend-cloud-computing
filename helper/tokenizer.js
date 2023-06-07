@@ -41,7 +41,7 @@ module.exports = {
     let disease;
     let output = await Axios.get(process.env.DICT_OUTPUT_DESC_EN);
     output.data.forEach((dict) => {
-      if (dict.int === highestProbIndex) disease = dict.disease;
+      if (dict.int === highestProbIndex) disease = dict.symptoms;
     });
 
     const sentences = await Axios.get(process.env.SENTENCES);
