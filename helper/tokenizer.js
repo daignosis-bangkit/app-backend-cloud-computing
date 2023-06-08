@@ -21,7 +21,7 @@ module.exports = {
 
     if (tokenized.length < 120)
       for (let i = tokenized.length; i < 120; i++) tokenized.push(0);
-    
+
     return tokenized;
   },
   toWord: async (arr, language) => {
@@ -30,14 +30,22 @@ module.exports = {
       return b - a;
     });
     let highestProbIndex;
+    let accuracy;
     tokenized.forEach((token, i) => {
-      if (token === sorted[0]) highestProbIndex = i;
+      if (token === sorted[0]) {
+        accuracy = token;
+        highestProbIndex = i;
+      }
     });
 
-    let symptoms;
-    let output = await Axios.get(process.env.DICT_OUTPUT_DESC_EN);
+    let disease;
+    let output;
+    if (language === "english")
+      output = await Axios.get(process.env.DICT_OUTPUT_DESC_EN);
+    else if (language === "indonesian")
+      output = await Axios.get(process.env.DICT_OUTPUT_DESC_ID);
     output.data.forEach((dict) => {
-      if (dict.int === highestProbIndex) symptoms = dict.symptoms;
+      if (dict.int === highestProbIndex) disease = dict.symptoms;
     });
 
     const sentences = await Axios.get(process.env.SENTENCES);
@@ -49,8 +57,12 @@ module.exports = {
         ? sentences.data.english
         : sentences.data.indonesian;
     const selectedSentences = sentence[randomSentencesNumber];
-    sentence = selectedSentences.replace("{symptoms}", symptoms);
+    sentence = selectedSentences.replace("{disease}", disease);
 
-    return sentence;
+    return {
+      message: sentence,
+      disease,
+      accuracy,
+    };
   },
 };

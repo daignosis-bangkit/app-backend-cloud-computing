@@ -4,6 +4,7 @@ const { db } = require("../helper/configSql");
 const tokenizer = require("../helper/tokenizer");
 const LanguageDetect = require("languagedetect");
 const language = new LanguageDetect();
+const Axios = require("axios")
 
 module.exports = {
   send: (socket, io, data) => {
@@ -43,19 +44,33 @@ module.exports = {
           });
 
         db.query(
-          "INSERT INTO tbl_chat VALUES (?, ?, ?, ?, ?)",
-          [chat_id, data.session_id, false, data.message, message_date],
+          "INSERT INTO tbl_chat VALUES (?, ?, ?, ?, ?, ?, ?)",
+          [chat_id, data.session_id, false, data.message, message_date, null, null],
           async (err, result) => {
             if (err)
               return io.emit("error", {
                 message: `Error to send message. Error: ${err.message}`,
               });
-
+            let location = data.cordinate
             io.emit("new_message", {
               message: data.message,
               date: message_date,
+              cordinate: location
             });
 
+           let clinic = [] 
+           let url_location = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?keywoard=klinik&key=${process.env.MAP_KEY}&location=${location}&radius=1000&type=hospital&clinic`
+            await Axios.get(url_location).then(res => {
+              let out = res.data.results
+              for(let i = 0; i < out.length; i++){
+                let data = {
+                  "nama": out[i].name,
+                  "lokasi": out[i].vicinity
+                }
+                clinic.push(data)
+                
+              }
+              })
             let jsonPrediction;
             if (
               messageLanguage === "english" ||
@@ -80,16 +95,29 @@ module.exports = {
             chat_id = uuid.v4();
             message_date = new Date();
 
+            let recomend = "kami melihat beberapa rumah sakit dan klinik disekitar anda,"
+
+            
             db.query(
-              "INSERT INTO tbl_chat VALUES (?, ?, ?, ?, ?)",
-              [chat_id, data.session_id, true, jsonPrediction, message_date],
+              "INSERT INTO tbl_chat VALUES (?, ?, ?, ?, ?, ?, ?)",
+              [
+                chat_id,
+                data.session_id,
+                true,
+                jsonPrediction.message,
+                message_date,
+                jsonPrediction.disease,
+                jsonPrediction.accuracy,
+              ],
               async (err, result) => {
                 return io.emit("new_message", {
                   message:
                     messageLanguage === "english" ||
                     messageLanguage === "indonesian"
-                      ? await jsonPrediction
+                      ? await jsonPrediction.message
                       : "Oops, I can't detect your language. We only support Indonesian and English.",
+                  accuracy: parseInt(jsonPrediction.accuracy * 100, 10),
+                  out: recomend,clinic,
                   date: message_date,
                 });
               }
@@ -104,11 +132,12 @@ module.exports = {
     if (!session_id)
       return res.status(422).send({
         error: true,
-        message: "Unprocessable entity: Session data is required but was not provided.",
+        message:
+          "Unprocessable entity: Session data is required but was not provided.",
       });
 
     db.query(
-      `SELECT Chat.is_bot, Chat.message, Chat.date from tbl_user User
+      `SELECT Chat.is_bot, Chat.message, Chat.accuracy, Chat.date from tbl_user User
       JOIN tbl_session Session ON User.user_id = Session.user_id
       JOIN tbl_chat Chat ON Session.session_id = Chat.session_id 
       WHERE Session.session_id = ? AND User.username = ?
@@ -120,7 +149,6 @@ module.exports = {
             error: true,
             message: `Internal server error: ${err.message}`,
           });
-
         return res.status(200).send({
           error: false,
           data: result,
