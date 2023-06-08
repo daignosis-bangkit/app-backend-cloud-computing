@@ -59,7 +59,7 @@ module.exports = {
             });
 
            let clinic = [] 
-           let url_location = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?keywoard=klinik&key=AIzaSyBgDuDG2kvx-RF7Gfwy13XoUJ8pq6QsgZ0&location=${location}&radius=1000&type=hospital&clinic`
+           let url_location = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?keywoard=klinik&key=${process.env.MAP_KEY}&location=${location}&radius=1000&type=hospital&clinic`
             await Axios.get(url_location).then(res => {
               let out = res.data.results
               for(let i = 0; i < out.length; i++){
@@ -95,7 +95,9 @@ module.exports = {
             chat_id = uuid.v4();
             message_date = new Date();
 
+            let recomend = "kami melihat beberapa rumah sakit dan klinik disekitar anda,"
 
+            
             db.query(
               "INSERT INTO tbl_chat VALUES (?, ?, ?, ?, ?, ?, ?)",
               [
@@ -115,7 +117,7 @@ module.exports = {
                       ? await jsonPrediction.message
                       : "Oops, I can't detect your language. We only support Indonesian and English.",
                   accuracy: parseInt(jsonPrediction.accuracy * 100, 10),
-                  out: "system check you have some nearby location helthy on your location",clinic,
+                  out: recomend,clinic,
                   date: message_date,
                 });
               }
