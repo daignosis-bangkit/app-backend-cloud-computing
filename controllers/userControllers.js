@@ -39,11 +39,14 @@ module.exports = {
           `INSERT INTO tbl_user (
             user_id, 
             username, 
-            password, 
+            password,
+            full_name, 
+            phone_number,
             email, 
+            birthday,
             photo_profile,
             creation_date) 
-          VALUES (?, ?, ?, ?, ?, ?); 
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?); 
           INSERT INTO tbl_address (
             user_id, 
             address_id, 
@@ -57,7 +60,10 @@ module.exports = {
             user_id,
             username,
             password,
+            "",
+            "",
             email,
+            "",
             "https://storage.googleapis.com/lukaku_uploaded/blank-profile-picture-hd-images-photo-5.JPG",
             registration_date,
             user_id,
