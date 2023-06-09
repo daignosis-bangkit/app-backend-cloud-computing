@@ -173,7 +173,8 @@ module.exports = {
     let imageUrl = "";
     let userid = req.user.user_id;
     let username = req.user.username;
-    let password = CryptoJs.MD5(req.body.password + process.env.PASS_KEY).toString()
+    //let password = CryptoJs.MD5(req.body.password + process.env.PASS_KEY).toString()
+    let password = req.body.password
     let fullname = req.body.full_name;
     let phonenumber = req.body.phone_number;
     let email = req.body.email;
@@ -183,11 +184,11 @@ module.exports = {
     let province = req.body.province;
     let postal_code = req.body.postal_code;
     let country = req.body.country;
-   
+    console.log(req.body.photo_profile)
     const query =
-      "UPDATE tbl_user SET username = ?, password = ?, full_name = ?, phone_number = ?, email = ?, birthday = ?, photo_profile = ? WHERE username = ?; UPDATE tbl_address SET address=?, city=?, province=?, postal_code=?, country=? where user_id=?";
+      "UPDATE tbl_user SET username = ?, full_name = ?, phone_number = ?, email = ?, birthday = ? WHERE username = ?; UPDATE tbl_address SET address=?, city=?, province=?, postal_code=?, country=? where user_id=?";
     //security filter for exploit upload file
-    if (req.file && req.file.cloudStoragePublicUrl) {
+    /*if (req.file && req.file.cloudStoragePublicUrl) {
       if (
         !req.file.mimetype.includes("image/") &&
         !req.file.originalname.match(ext)
@@ -196,19 +197,17 @@ module.exports = {
       }
       photo = req.file.cloudStoragePublicUrl;
     } else {
-      res.status(500).send({message: "empty file", error: true});
-    }
+      res.status(500).send({message: "empty afaf", error: true});
+    }*/
     
     db.query(
       query,
       [
         username,
-        password,
         fullname,
         phonenumber,
         email,
         birthday,
-        photo,
         username,
         address,
         city,
@@ -221,6 +220,7 @@ module.exports = {
         if (err) {
           res.status(500).send({ error: true, message: err.sqlMessage });
         } else {
+          
           res.send({ message: "Update Successful", error: false});
         }
       }
