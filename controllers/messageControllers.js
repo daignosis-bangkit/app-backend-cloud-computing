@@ -4,11 +4,11 @@ const { db } = require("../helper/configSql");
 const tokenizer = require("../helper/tokenizer");
 const LanguageDetect = require("languagedetect");
 const language = new LanguageDetect();
-const Axios = require("axios")
+const Axios = require("axios");
 
 module.exports = {
-  send: (socket, io, data) => {
-    if (typeof data !== "object") return false;
+  new: (req, res) => {
+    const data = req.body;
     if (!data.session_id && !data.message) return false;
 
     let messageLanguage =
@@ -31,46 +31,52 @@ module.exports = {
       `SELECT * from tbl_user User
       JOIN tbl_session Session ON User.user_id = Session.user_id
       WHERE Session.session_id = ? AND User.username = ?`,
-      [data.session_id, socket.user.username],
+      [data.session_id, req.user.username],
       (err, result) => {
         if (err)
-          return io.emit("error", {
-            message: `Error to get session_id. Error: ${err.message}`,
+          return res.status(500).send({
+            error: true,
+            message: `Internal server error: ${err.message}`,
           });
 
-        if (result[0].total === 0)
-          return io.emit("error", {
-            message: `Couldn't find given session id.`,
+        if (result.length === 0)
+          return res.status(404).send({
+            error: true,
+            message: `Couldn't find given session_id`,
           });
 
         db.query(
           "INSERT INTO tbl_chat VALUES (?, ?, ?, ?, ?, ?, ?)",
-          [chat_id, data.session_id, false, data.message, message_date, null, null],
+          [
+            chat_id,
+            data.session_id,
+            false,
+            data.message,
+            message_date,
+            null,
+            null,
+          ],
           async (err, result) => {
             if (err)
-              return io.emit("error", {
-                message: `Error to send message. Error: ${err.message}`,
+              return res.status(500).send({
+                error: true,
+                message: `Internal server error: ${err.message}`,
               });
-            let location = data.cordinate
-            io.emit("new_message", {
-              message: data.message,
-              date: message_date,
-              cordinate: location
-            });
 
-           let clinic = [] 
-           let url_location = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?keywoard=klinik&key=${process.env.MAP_KEY}&location=${location}&radius=1000&type=hospital&clinic`
-            await Axios.get(url_location).then(res => {
-              let out = res.data.results
-              for(let i = 0; i < out.length; i++){
+            let location = data.cordinate;
+
+            let clinic = [];
+            let url_location = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?keywoard=klinik&key=${process.env.MAP_KEY}&location=${location}&radius=1000&type=hospital&clinic`;
+            await Axios.get(url_location).then((res) => {
+              let out = res.data.results;
+              for (let i = 0; i < out.length; i++) {
                 let data = {
-                  "nama": out[i].name,
-                  "lokasi": out[i].vicinity
-                }
-                clinic.push(data)
-                
+                  nama: out[i].name,
+                  lokasi: out[i].vicinity,
+                };
+                clinic.push(data);
               }
-              })
+            });
             let jsonPrediction;
             if (
               messageLanguage === "english" ||
@@ -95,9 +101,9 @@ module.exports = {
             chat_id = uuid.v4();
             message_date = new Date();
 
-            let recomend = "kami melihat beberapa rumah sakit dan klinik disekitar anda,"
+            let recomend =
+              "kami melihat beberapa rumah sakit dan klinik disekitar anda,";
 
-            
             db.query(
               "INSERT INTO tbl_chat VALUES (?, ?, ?, ?, ?, ?, ?)",
               [
@@ -110,15 +116,25 @@ module.exports = {
                 jsonPrediction.accuracy,
               ],
               async (err, result) => {
-                return io.emit("new_message", {
-                  message:
-                    messageLanguage === "english" ||
-                    messageLanguage === "indonesian"
-                      ? await jsonPrediction.message
-                      : "Oops, I can't detect your language. We only support Indonesian and English.",
-                  accuracy: parseInt(jsonPrediction.accuracy * 100, 10),
-                  out: recomend,clinic,
-                  date: message_date,
+                if (err)
+                  return res.status(500).send({
+                    error: true,
+                    message: `Internal server error: ${err.message}`,
+                  });
+
+                return res.status(200).send({
+                  error: false,
+                  data: {
+                    message:
+                      messageLanguage === "english" ||
+                      messageLanguage === "indonesian"
+                        ? await jsonPrediction.message
+                        : "Oops, I can't detect your language. We only support Indonesian and English.",
+                    accuracy: parseInt(jsonPrediction.accuracy * 100, 10),
+                    out: recomend,
+                    clinic,
+                    date: message_date,
+                  },
                 });
               }
             );

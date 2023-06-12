@@ -1,17 +1,17 @@
-const { read } = require("fs");
 const uuid = require("uuid");
 const { db } = require("../helper/configSql");
 
 module.exports = {
-  new: (socket, io, data) => {
+  new: (req, res) => {
     const session_id = uuid.v4();
     db.query(
       "SELECT user_id FROM tbl_user WHERE username = ?",
-      [socket.user.username],
+      [req.user.username],
       (err, result) => {
         if (err)
-          return io.emit("error", {
-            message: `Error to get user_id. Error: ${err.message}`,
+          return res.status(500).send({
+            error: true,
+            message: `Internal server error: ${err.message}`,
           });
 
         db.query(
@@ -19,16 +19,14 @@ module.exports = {
           [session_id, result[0].user_id],
           (err, result) => {
             if (err)
-              return io.emit("error", {
-                message: `Error to crete session. Error: ${err.message}`,
+              return res.status(500).send({
+                error: true,
+                message: `Internal server error: ${err.message}`,
               });
 
-            io.emit("success", {
-              message: "Session created!",
-            });
-            return io.emit("created_session", {
-              session_id,
-              room: data.username,
+            return res.status(200).send({
+              error: false,
+              data: { session_id },
             });
           }
         );
