@@ -13,6 +13,7 @@ module.exports = {
     input = input.map((i) => i.word);
 
     let tokenized = [];
+    word = word.replace(/[^\w\s]/g,"");
     word.split(" ").forEach((token) => {
       const tokenIndex = input.indexOf(token);
       if (tokenIndex > 0) tokenized.push(tokenIndex + 1);
